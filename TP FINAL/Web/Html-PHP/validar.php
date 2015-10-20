@@ -1,15 +1,15 @@
 <?PHP
-	session_start();
+	session_start() ;
 	
 	$user =$_POST ["usuario"];
 	$clave =$_POST ["clave"];
 	
-	$conexion = mysql_connect("localhost", "root","") or die("no db");
-	mysql_select_db ("tpFinal");
+	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 	
 	$consulta = mysql_query("SELECT * 
 	                        FROM usuario
-	                        WHERE usuario='".$user."' AND contraseña='".$clave."' ");
+	                        WHERE pass ='".$clave."' and  usuario='".$user."'");
 
 	$filasafectadas = mysql_num_rows($consulta);
 	
@@ -20,20 +20,35 @@
 
 	        $fila = mysql_fetch_assoc($consulta);
 
-            $_SESSION["Nombre"] = $fila['Nombre'];	    
+           	    
             
-	        if ($fila["Rol"] == 'Jedi'){
-	             header("location:./Jedi.php");
+	        if ($fila["codigo_rol"] == 1){
+				 
+				 $_SESSION["nombre"] = $fila['nombre'] ;
+	             header("location:./chofer.php");
+				 
+				 
 	        	    
-	         }else if ($fila["Rol"] == 'Padawan'){
-                        header ("location:padawan.php");
 	        
-             }else 
-                header("location:ladooscuro.php");
+			}else if ($fila["codigo_rol"] == 2){
+				     
+			     $_SESSION["nombre"] = $fila['nombre'] ;
+                 header ("location:./administrador.php");
 	        
-	    }else header("location:ladooscuro.php");
+            
+			
+			}else if($fila["codigo_rol"] == 3){
+				
+				 $_SESSION["nombre"] = $fila['nombre'] ;
+				 
+                 header("location:./supervisor.php");
+			 
+			
+			}else header("location:error.php");
+			 
+	    }else header("location:error.php");
 	
-	}else header("location:ladooscuro.php");
+	}else header("location:error.php");
 	
 
 	
