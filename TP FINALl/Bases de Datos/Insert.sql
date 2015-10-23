@@ -3,7 +3,7 @@ use tpFinal;
 insert into rol (codigo_rol, descripcion)
 values	(1, 'chofer'),
 		(2, 'administrador'),
-		(3, 'encargado');
+		(3, 'supervisor');
         
 /*select *
 from rol;*/

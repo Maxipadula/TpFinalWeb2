@@ -14,6 +14,7 @@
 				
 				</br>
 				<div><label>LOGIN
+					</br>
 					<input type="text" name="usuario">
 					</label>
 				</div>
@@ -26,7 +27,7 @@
 				</div>
 				</br>
 				
-				<input type="submit">
+				<input type="submit" value="Iniciar Sesion">
 				</h4>
 			</div>
 		</form>

@@ -1,4 +1,22 @@
 <html>
+
+<?PHP
+	 session_start();
+	 
+	 
+	  if ( isset ($_SESSION["nombre"])){
+		
+	   $nombre = $_SESSION["nombre"];
+	   
+	   }
+	   else{
+		     session_destroy();
+    
+           header("location:login.php");
+	   }
+?>
+
+<html>
 	<head>
 	</head>
 	
@@ -9,30 +27,16 @@
 		<IMG style="float: left" SRC="mapaa.jpg">  <!--el float es para que la imagen este a la izquierda del formulario-->
 		</H1>
 		<H4>
-		<form class='contacto' method="post" action="validar.php">
-			<div id="contacto">
-				
-				</br>
-				<div><label>LOGIN
-					<input type="text" name="usuario">
-					</label>
-				</div>
-				
-				</br>
-				
-				<div><label>PASSWORD
-					<input type="password" name="clave">
-					</label>
-				</div>
-				</br>
-				
-				<input type="submit">
-				</h4>
-			</div>
+		<form class='contacto' method="post" action="supervisor_chofer.php">
+			<hr>
+			
+			
+			
+			
 		</form>
 		<H2>
 		<IMG style="float: right" SRC="Rutas.jpg">  <!--el float es para que la imagen este a la derecha del formulario-->
 		</H2>
 	</body>
 </html>
-			
+</html>
