@@ -50,9 +50,13 @@ values ('A1', 'Motos de 2 ruedas hasta 50cc'),
 /*select *
 from licencia;*/
 
-/*insert into permiso(id_permiso, codigo_rol, descripcion)
-	values();*/
-
+insert into permiso(id_permiso, codigo_rol, descripcion)
+	values(1,1,'chofer_home'),
+		  (4,1,'registrar_vc'),
+          (5,1,'chofer_registro'),
+		  (2,2,'administrador_home'),
+		  (3,3,'supervisor_home');
+          
 insert into usuario (id_usuario, usuario, nombre, pass, fecha_nacimiento, id_tipo_doc, num_doc, id_licencia, codigo_rol)
 values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 'NO',3),
 		(20, 'santi','Santiago Ares','123kjl','1984-04-23', 1, '32147563','B.1',2),
@@ -187,3 +191,12 @@ values	(123, 006, 5555,1, 15000, '2015-08-06'),
 		(129, 004, 2222,7, 8750,'2015-03-06'),
         (130, 004, 2222,8,7450,'2015-03-06'),
 		(131, 003, 6666,9, 2500,'2015-06-26');
+        
+        
+        
+        
+SELECT * 
+						FROM usuario u join 
+							     rol r on u.codigo_rol = r.codigo_rol join
+								 permiso p on r.codigo_rol = p.codigo_rol
+	                        WHERE  id_usuario= 30 and p.descripcion = 'chofer_home'

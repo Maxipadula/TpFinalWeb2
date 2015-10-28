@@ -6,7 +6,7 @@
 		<?php
 			 session_start();
 			 
-			 $permiso ="registrar_vc";
+			 $permiso ="chofer_registro";
 			 $id = $_SESSION["id_usuario"];
 			 
 			 $conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
@@ -33,9 +33,9 @@
 			
 	        }
 		?>
-			<h2> VALE DE COMBUSTIBLE </h2>
+			<h2> REGISTRO DE VIAJE</h2>
 			
-			<form class='contacto' method="post" action="validar_vc.php">
+			<form class='contacto' method="post" action="validar_registro.php">
 			<div id="contacto">
 				
 				</br>
