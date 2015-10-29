@@ -13,9 +13,6 @@
 	                        FROM usuario
 	                        WHERE pass ='".$clave."' AND  usuario='".$user."'") or die ("no q");
 	
-							
-					
-
 	$filasafectadas1 = mysql_num_rows($consulta1);
 	
 	if ( $filasafectadas1 != 0){
@@ -26,7 +23,6 @@
 	        $fila1 = mysql_fetch_assoc($consulta1);
 
            	    
-            
 	        if ($fila1["codigo_rol"] == 1){
 				 
 				 $permiso="chofer_home";
@@ -37,8 +33,6 @@
 	             header("location:./chofer_home.php");
 				 
 				 
-	        	    
-	        
 			}else if ($fila1["codigo_rol"] == 2){
 				  
 				 $permiso=administrador_home;

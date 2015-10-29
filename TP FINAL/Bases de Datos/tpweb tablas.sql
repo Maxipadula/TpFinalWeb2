@@ -1,6 +1,6 @@
 create database if not exists tpFinal;
 
-drop schema tpFinal;
+/*drop schema tpFinal;*/
 
 use tpFinal;
 
@@ -43,8 +43,6 @@ create table if not exists licencia
 );
  /**************/
 
-
-  
    /**MECANICOS****/ 
  create table if not exists mecanico
  (id_mecanico int primary key,
@@ -106,15 +104,9 @@ create table if not exists acoplado
 
 );
 
-
- 
-
 /***************/
 
 /*VIAJE*/
-
-
-
 create table if not exists viaje 
 	(id_viaje int unique,
      id_usuario int, 
@@ -163,7 +155,6 @@ create table if not exists repuesto
     
 );
 
-
 create table if not exists orden
 	(id_orden int primary key,
     id_repuesto int,
@@ -171,7 +162,6 @@ create table if not exists orden
     constraint id_repuesto_orden foreign key (id_repuesto) references repuesto (id_repuesto)
     
 );
-
 
 create table if not exists reparacion 
 	(codigo_reparacion int unique,

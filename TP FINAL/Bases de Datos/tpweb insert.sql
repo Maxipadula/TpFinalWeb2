@@ -64,8 +64,9 @@ values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 
 		(40, 'pepe','Pedro Juarez','123456rty','1994-01-14',1, '37895234','B.2',1),
 		(50, 'moni','Monica Gimenez','1234123ghj','1990-12-26', 1, '30369852','E.1',1),
 		(60, 'leo','Leonel Rodriguez','123123nhu','1985-11-07', 1, '34563218','C',3);
-/*select *
-from usuario;*/
+        
+select *
+from usuario;
 
 insert into modelo (id_modelo, descripcion)
 values	(100, 'HD 78'),

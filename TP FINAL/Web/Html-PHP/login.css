@@ -1,0 +1,40 @@
+
+
+H1{
+	margin-top: 5pt;
+
+}
+
+H2{
+	margin-top: -300pt;
+}
+
+H4 {
+   width: 300px;
+   margin: 10 auto;
+   font-family: Arial, Helvetica, sans-serif;
+   margin-top: 80pt;
+}
+
+.contacto {
+	padding:5px 2px;
+	margin:5pax 0;
+	border: 1px solid #CED5D7;
+	border-radius: 6px;
+	padding: 45px 45px 45px; 
+	margin-top: 50px;
+	background-color: white;
+	box-shadow: 0px 5 px 10px #B5C1C5, 0 0 0 10px #EEF5F7 inset;
+	
+}
+
+*{
+	font-family: sant-serif;
+	font-size: 12px; 
+	color: #798e94;
+}
+
+
+
+
+
