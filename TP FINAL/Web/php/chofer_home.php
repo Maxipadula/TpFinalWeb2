@@ -24,9 +24,9 @@
 	<nav>
 		
        <ul>
-           <li><a href="./chofer_datos_viaje.php">DATOS DE VIAJE</a></li>
            <li><a href="./registrar_vc.php">REGISTRAR VALE DE COMBUSTIBLE</a></li>
-           <li><a href="./login.php">SALIR</a></li>  
+           <li><a href="./chofer_registro.php">CREAR REGISTRO DE VIAJE</a></li>
+           <li><a href="./home.php">SALIR</a></li>  
 
        </ul>
  

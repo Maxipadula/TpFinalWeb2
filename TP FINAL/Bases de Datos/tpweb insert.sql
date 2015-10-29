@@ -3,8 +3,7 @@ use tpFinal;
 insert into rol (codigo_rol, descripcion)
 values	(1, 'chofer'),
 		(2, 'administrador'),
-		(3, 'supervisor'),
-        (4, 'cliente');
+		(3, 'supervisor');
         
 /*select *
 from rol;*/
@@ -54,20 +53,9 @@ from licencia;*/
 insert into permiso(id_permiso, codigo_rol, descripcion)
 	values(1,1,'chofer_home'),
 		  (4,1,'registrar_vc'),
-          (5,4,'chofer_registro'),
+          (5,1,'chofer_registro'),
 		  (2,2,'administrador_home'),
-		  (3,3,'supervisor_home'),
-          (6,1,'chofer_datos_viaje');
-          
-          
-insert into cliente (id_cliente, usuario, pass, codigo_rol)
-values (1,'Pedromania','fgh258973',4),
-        (2,'Ropamania','fgh258933',4),
-        (3,'TodoRopa','fgh258903',4),
-        (4,'Todopordospesos','fgh258903',4),
-        (5,'sisis','fgh258903',4),
-        (6,'nadanada','fgh258903',4);
-        
+		  (3,3,'supervisor_home');
           
 insert into usuario (id_usuario, usuario, nombre, pass, fecha_nacimiento, id_tipo_doc, num_doc, id_licencia, codigo_rol)
 values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 'NO',3),
@@ -76,8 +64,9 @@ values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 
 		(40, 'pepe','Pedro Juarez','123456rty','1994-01-14',1, '37895234','B.2',1),
 		(50, 'moni','Monica Gimenez','1234123ghj','1990-12-26', 1, '30369852','E.1',1),
 		(60, 'leo','Leonel Rodriguez','123123nhu','1985-11-07', 1, '34563218','C',3);
-/*select *
-from usuario;*/
+        
+select *
+from usuario;
 
 insert into modelo (id_modelo, descripcion)
 values	(100, 'HD 78'),
@@ -104,8 +93,6 @@ insert into marca(id_marca, descripcion)
 values (1, 'Hyundai'),
 	   (2, 'Foton'),
        (4, 'Renult');
-       
-
        
 /*select *
 from marca;*/
@@ -137,26 +124,23 @@ values	(101, 'acoplado1'),
 		(601, 'acoplado6');
 
 insert into viaje (id_viaje, id_usuario, id_transporte, origen, km_recorridos,
-				 destino, id_cliente, fecha_inicio, fecha_fin, carga)
-values	(1122, 10, 2222, 'Buenos Aires', 10000, 'Florianopolis', 1, '2015-06-05 07:20:21', '2015-06-06 09:36:55', 'pantalones'),
-		(2233, 20, 6666, 'Salta',8900, 'Buenos aires',2, '2015-08-09 07:00:20','2015-08-09 04:00:20', 'poleras'),
-		(3344, 60, 5555, 'Rio Negro',  4000, 'Chile',3, '2015-10-11 05:00:00', '2015-11-11 01:18:05', 'pantalones'),
-		(4455, 40, 1111, 'Cordoba',  9000, 'Bolivia',4, '2015-08-01 05:25:54','2015-08-01 18:25:55','remeras'),
-		(5566, 30, 3333, 'Misiones', 4000, 'Montevideo',5, '2015-12-12 12:30:34', '2015-12-12 16:30:00','medias'),
-		(6677, 50, 4444, 'Mendoza',  8500, 'Asuncion',6, '2015-07-06 12:00:20', '2015-07-06 20:40:29','buzos');
-
+				 destino, cliente, fecha_inicio, fecha_fin, carga)
+values	(1122, 10, 2222, 'Buenos Aires', 10000, 'Florianopolis', 'Pedromania', '2015-06-05 07:20:21', '2015-06-06 09:36:55', 'pantalones'),
+		(2233, 20, 6666, 'Salta',8900, 'Buenos aires','Ropamania', '2015-08-09 07:00:20','2015-08-09 04:00:20', 'poleras'),
+		(3344, 60, 5555, 'Rio Negro',  4000, 'Chile','TodoRopa', '2015-10-11 05:00:00', '2015-11-11 01:18:05', 'pantalones'),
+		(4455, 40, 1111, 'Cordoba',  9000, 'Bolivia','Todopordospesos', '2015-08-01 05:25:54','2015-08-01 18:25:55','remeras'),
+		(5566, 30, 3333, 'Misiones', 4000, 'Montevideo','sisis', '2015-12-12 12:30:34', '2015-12-12 16:30:00','medias'),
+		(6677, 50, 4444, 'Mendoza',  8500, 'Asuncion','nadanada', '2015-07-06 12:00:20', '2015-07-06 20:40:29','buzos');
 
 
 insert into vale_combustible(id_vc,id_viaje,  fecha_hora, lugar, costo, cantidad)
 values (1,1122,'2015-06-05 15:11:25', 'Entre Rios', 5000.00, 250.00),   
        (2,1122,'2015-06-06 07:36:55', 'canasvieiras', 2000.00, 100.00),
 	   (3,3344,'2015-10-11 07:16:45', 'Mendoza', 2600.00, 200.00),
-	   (4,5566,'2015-07-06 15:30:14', 'Buenos Aires', 2250.00, 150.00) 
+	   (4,6677,'2015-07-06 15:30:14', 'Buenos Aires', 2250.00, 150.00) 
      ;
       
- /*select *
-from vale_combustible;*/
-
+ 
 insert into lleva(id_acoplado,id_transporte,id_viaje)
 values(101,2222,1122),   
 	  (101,5555,3344),  
@@ -209,3 +193,11 @@ values	(123, 006, 5555,1, 15000, '2015-08-06'),
         (130, 004, 2222,8,7450,'2015-03-06'),
 		(131, 003, 6666,9, 2500,'2015-06-26');
         
+        
+        
+        
+SELECT * 
+						FROM usuario u join 
+							     rol r on u.codigo_rol = r.codigo_rol join
+								 permiso p on r.codigo_rol = p.codigo_rol
+	                        WHERE  id_usuario= 30 and p.descripcion = 'chofer_home'
