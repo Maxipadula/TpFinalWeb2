@@ -1,6 +1,6 @@
 create database if not exists tpFinal;
 
-/*drop schema tpFinal;*/
+drop schema tpFinal;
 
 use tpFinal;
 
@@ -28,7 +28,7 @@ create table if not exists licencia
 );
 
  CREATE TABLE IF NOT EXISTS usuario (
-    id_usuario INT PRIMARY KEY,
+    id_usuario varchar(30) PRIMARY KEY,
     usuario VARCHAR(30),
     nombre VARCHAR(30),
     pass varchar(30),
@@ -40,9 +40,22 @@ create table if not exists licencia
     CONSTRAINT id_tipo_doc FOREIGN KEY (id_tipo_doc) REFERENCES tipo_doc (id_tipo_doc),
     CONSTRAINT id_licencia_usuario FOREIGN KEY (id_licencia) REFERENCES licencia (id_licencia),
     CONSTRAINT id_rol_usuario FOREIGN KEY (codigo_rol) REFERENCES rol (codigo_rol)
+    
+);
+
+
+ CREATE TABLE IF NOT EXISTS cliente (
+    id_cliente varchar(30) primary key,
+    usuario VARCHAR(30),
+    pass varchar(30),
+	codigo_rol int,
+    CONSTRAINT id_rol_cliente FOREIGN KEY (codigo_rol) REFERENCES rol (codigo_rol)
+    
 );
  /**************/
 
+
+  
    /**MECANICOS****/ 
  create table if not exists mecanico
  (id_mecanico int primary key,
@@ -104,23 +117,30 @@ create table if not exists acoplado
 
 );
 
+
+ 
+
 /***************/
 
 /*VIAJE*/
+
+
+
 create table if not exists viaje 
-	(id_viaje int unique,
-     id_usuario int, 
+	(id_viaje int primary key,
+     id_usuario varchar (30), 
      id_transporte int,
      origen varchar (30),
      km_recorridos int,
      destino varchar (30),
-     cliente varchar (30),
+     id_cliente varchar(30),
      fecha_inicio datetime,
      fecha_fin datetime,
      carga varchar(30),
-	 constraint viaje_pk primary key (id_viaje),
+     constraint id_clientes_viaje foreign key (id_cliente) references cliente (id_cliente),
      constraint id_usuario_viaje foreign key (id_usuario) references usuario (id_usuario),
      constraint id_transporte_fk foreign key (id_transporte) references transporte (id_transporte)
+	
 );
 
 create table if not exists vale_combustible
@@ -155,6 +175,7 @@ create table if not exists repuesto
     
 );
 
+
 create table if not exists orden
 	(id_orden int primary key,
     id_repuesto int,
@@ -162,6 +183,7 @@ create table if not exists orden
     constraint id_repuesto_orden foreign key (id_repuesto) references repuesto (id_repuesto)
     
 );
+
 
 create table if not exists reparacion 
 	(codigo_reparacion int unique,

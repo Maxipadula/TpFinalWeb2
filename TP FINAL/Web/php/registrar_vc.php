@@ -6,7 +6,7 @@
 		<?php
 			 session_start();
 			 
-			 $permiso =$_SESSION["permiso"];
+			 $permiso ="registrar_vc";
 			 $id = $_SESSION["id_usuario"];
 			 
 			 $conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
@@ -24,18 +24,23 @@
 							
 							$fila2 = mysql_fetch_assoc($consulta2);
 	
+		
+		
 							if($fila2["permiso"] != $permiso)
 								die("NO TIENES PERMISO");
+		
+		
+			
 	        }
 		?>
 			<h2> VALE DE COMBUSTIBLE </h2>
 			
-			<form class='contacto' method="post" action="validar.php">
+			<form class='contacto' method="post" action="validar_vc.php">
 			<div id="contacto">
 				
 				</br>
 				<div><label>FECHA Y HORA
-					<input type="text" name="fecha_hora_vc">
+					<input type="datetime" name="fecha_hora_vc">
 					</label>
 				</div>
 				
@@ -62,7 +67,11 @@
 					</label>
 				</div>
 				</br>
-		
+			  <p>
+                <button id="botonesform" type="submit">ACEPTAR</button>
+				<button id="botonesform2" type="reset">BORRAR TODO</button>
+				<input type="button" onclick="history.back()" name="volver atrás" value="CANCELAR">
+                </p>
 		
 	</body>
 </html>

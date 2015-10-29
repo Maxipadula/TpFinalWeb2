@@ -7,33 +7,55 @@
 	$nombree =$_POST ["nombre"];
 	$passw =$_POST ["pass"];
 	$fecha_na =$_POST ["fecha_nacimiento"];
-	$id_tipo_d =$_POST ["id_tipo_doc"];
+	$tipo_d =$_POST ["tipo_doc"];
 	$numero_doc =$_POST ["num_doc"];
-	$id_lic =$_POST ["id_licencia"];
-	$cod_rol =$_POST ["codigo_rol"];
+	$id_lic =$_POST ["licencia"];
+	$rol =$_POST ["rol"];
 	
-	/*echo $id_us;
-	echo $usua;
-	echo $nombree;
-	echo $passw;
-	echo $fecha_na;
-	echo $id_tipo_d;
-	echo $numero_doc;
-	echo $id_lic;
-	echo $cod_rol;*/
+
 	
 	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
 		mysql_select_db ("tpFinal",$conexion) or die ("no db");
+	
+	$consulta2= mysql_query(" SELECT id_tipo_doc tipo
+                              FROM tipo_doc
+                              WHERE descripcion = '".$tipo_d."' ") or die ("no q3");
+	
+	$fila2 = mysql_fetch_assoc($consulta2);
+	$id_tipo_d = $fila2["tipo"];
+	
+	
+			echo $id_tipo_d;
+							
+	
 
-	$_GRABAR_SQL = "INSERT INTO usuario (id_usuario,usuario,nombre,pass,fecha_nacimiento,id_tipo_doc,num_doc,id_licencia,codigo_rol)
-					VALUES ('$id_us','$usua','$nombree','$passw','$fecha_na','$id_tipo_d','$numero_doc','$id_lic','$cod_rol');";   
+							
+	$consulta1= mysql_query(" SELECT codigo_rol ID
+                              FROM rol 
+                              WHERE rol.descripcion = '".$rol."' ") or die ("no q2");
+	
+	$fila1 = mysql_fetch_assoc($consulta1);
+							
+							$cod_rol = $fila1["ID"];
+		 					  
+    
+			echo $cod_rol;	
+     
+
+	$insert_usuario = mysql_query("insert into usuario (id_usuario, usuario, nombre, pass, fecha_nacimiento, id_tipo_doc, num_doc, id_licencia, codigo_rol)
+									values ('".$id_us."','".$usua."','".$nombree."','".$passw."', '".$fecha_na."', '".$id_tipo_d."', '".$numero_doc."', '".$id_lic."', '".$cod_rol."') 
+										    ;")or die (mysql_error());
+											
+											
+	/*$_GRABAR_SQL =mysql_query( "INSERT INTO usuario (id_usuario,usuario,nombre,pass,fecha_nacimiento,id_tipo_doc,num_doc,id_licencia)
+					VALUES ('$id_us','$usua','$nombree','$passw','$fecha_na','$id_tipo_d','$numero_doc','$id_lic','$cod_rol')") or die ("error query");   
 	
 	$resultado=mysql_query($_GRABAR_SQL);
 	
 	echo $resultado;
-	echo $_GRABAR_SQL;
+	echo $_GRABAR_SQL;*/
 	
-	mysql_close($conexion);
+
 				 
 	/*mysql_query("SELECT * 
 	             FROM usuario") or die ("no q");*/
@@ -55,7 +77,7 @@
 		
 	echo "<p>Los datos han sido guardados con exito.</p>   
 
-		<p><a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p>"
+		<p><a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p>";
 							
 
 	?>

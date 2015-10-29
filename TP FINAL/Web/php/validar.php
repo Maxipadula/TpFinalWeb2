@@ -3,7 +3,8 @@
 	
 	$user =$_POST ["usuario"];
 	$clave =$_POST ["clave"];
-	
+	$filasafectadas2 =0;
+	$filasafectadas1=0;
 
 	
 	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
@@ -11,18 +12,31 @@
 	
 	$consulta1 = mysql_query("SELECT * 
 	                        FROM usuario
-	                        WHERE pass ='".$clave."' AND  usuario='".$user."'") or die ("no q");
+	                        WHERE pass ='".$clave."' AND  usuario='".$user."'") ;
 	
+	
+	
+
+		$consulta5 = mysql_query(" SELECT * 
+								   FROM cliente
+								   WHERE pass ='".$clave."' AND  usuario='".$user."'") or die ("no q");
+	
+	$filasafectadas2 = mysql_num_rows($consulta5);
+				
 	$filasafectadas1 = mysql_num_rows($consulta1);
 	
-	if ( $filasafectadas1 != 0){
 	
-	    if ( $filasafectadas1 == 1){
+	
+	if ( $filasafectadas1 != 0 || $filasafectadas2 != 0 ){
+	
+	    if ( $filasafectadas1 == 1 && $filasafectadas2 == 0 ){
 	
 
 	        $fila1 = mysql_fetch_assoc($consulta1);
+			
 
            	    
+            
 	        if ($fila1["codigo_rol"] == 1){
 				 
 				 $permiso="chofer_home";
@@ -33,10 +47,12 @@
 	             header("location:./chofer_home.php");
 				 
 				 
+	        	    
+	        
 			}else if ($fila1["codigo_rol"] == 2){
 				  
-				 $permiso=administrador_home;
-				 permisos();
+				 $permiso="administrador_home";
+				 permisos($clave,$user,$permiso);
 			     $_SESSION["nombre"] = $fila1['nombre'] ;
 				
 				 
@@ -46,22 +62,37 @@
 			
 			}else if($fila1["codigo_rol"] == 3){
 				 
-				 $permiso=supervisor_home;
-				 permisos();
+				 $permiso="supervisor_home";
+				 permisos($clave,$user,$permiso);
 				 $_SESSION["nombre"] = $fila1['nombre'] ;
 				 
 				 
                  header("location:./supervisor_home.php");
 			 
-			
 			}else header("location:error.php");
+		
+		}else if ( $filasafectadas1 == 0 && $filasafectadas2 == 1 ){
+			
+			$fila3 = mysql_fetch_assoc($consulta5);
+			
+			if ($fila3["codigo_rol"] == 4){
+				 
+				 $permiso="chofer_registro" ;
+				 permisos_cliente($clave,$user,$permiso);
+				 
+				 
+				 
+                 header("location:./chofer_registro.php");
+						
 			 
+	        }else header("location:error.php");
+	
 	    }else header("location:error.php");
 	
-	}else header("location:error.php");
 	
 
-	
+	 }else header("location:error.php");	
+	 
 	function permisos ($clave, $user, $permiso){
 		
 		$consulta2 = mysql_query("	SELECT r.descripcion descripcion, p.descripcion permiso, u.id_usuario ID
@@ -81,4 +112,35 @@
 	
 			
 	}
+	
+	function permisos_cliente ($clave, $user, $permiso){
+		
+		$consulta3 = mysql_query("	SELECT r.descripcion descripcion, p.descripcion permiso, c.id_cliente ID
+						            FROM  cliente c join 
+							              rol r on c.codigo_rol = r.codigo_rol join
+								          permiso p on r.codigo_rol = p.codigo_rol
+	                                WHERE pass ='".$clave."' and  usuario= '".$user."' and p.descripcion = '".$permiso."'")	;
+		
+		$fila3 = mysql_fetch_assoc($consulta3);
+	
+		
+		
+		if($fila3["permiso"] != $permiso)
+			 die("NO TIENES PERMISO");
+		
+		 $_SESSION["permiso"] = $fila3['permiso'] ;
+		 $_SESSION["id_usuario"] = $fila3['ID'] ;
+	
+			
+	}
+	
+	/*function validar_viaje ($_SESSION["id_usuario"] ){
+		
+		$id_usuario = $_SESSION["id_usuario"]
+		
+			$consulta4 = mysql_query("	SELECT *
+						            FROM  viaje
+	                                WHERE id_usuario= '".$user."' and p.descripcion = '".$permiso."'")	;
+	}*/
+	
 ?>
