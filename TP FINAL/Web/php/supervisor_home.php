@@ -35,8 +35,6 @@
             <a href="./registrar_datos.php">REGISTROS</a>
             <a href="./home.php">SALIR</a>
 
-      
- 
 	</nav>
 				</br>
 			

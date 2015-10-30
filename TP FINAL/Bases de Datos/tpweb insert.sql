@@ -5,8 +5,8 @@ values	(1, 'chofer'),
 		(2, 'administrador'),
 		(3, 'supervisor');
         
-/*select *
-from rol;*/
+select *
+from rol;
 
 insert into tipo_doc (id_tipo_doc, descripcion)
 values (1, 'DNI'), 
@@ -65,6 +65,13 @@ values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 
 		(50, 'moni','Monica Gimenez','1234123ghj','1990-12-26', 1, '30369852','E.1',1),
 		(60, 'leo','Leonel Rodriguez','123123nhu','1985-11-07', 1, '34563218','C',3);
         
+
+/*delete from usuario where id_usuario = 10;*/
+        
+/*SELECT * 
+					FROM usuario U inner join
+								  tipo_doc TD on U.id_tipo_doc = TD.id_tipo_doc
+								  WHERE TD.id_tipo_doc = 1 AND  num_doc=302584789;   */
 select *
 from usuario;
 
@@ -132,21 +139,22 @@ values	(1122, 10, 2222, 'Buenos Aires', 10000, 'Florianopolis', 'Pedromania', '2
 		(5566, 30, 3333, 'Misiones', 4000, 'Montevideo','sisis', '2015-12-12 12:30:34', '2015-12-12 16:30:00','medias'),
 		(6677, 50, 4444, 'Mendoza',  8500, 'Asuncion','nadanada', '2015-07-06 12:00:20', '2015-07-06 20:40:29','buzos');
 
+select *
+from viaje;
 
 insert into vale_combustible(id_vc,id_viaje,  fecha_hora, lugar, costo, cantidad)
 values (1,1122,'2015-06-05 15:11:25', 'Entre Rios', 5000.00, 250.00),   
        (2,1122,'2015-06-06 07:36:55', 'canasvieiras', 2000.00, 100.00),
 	   (3,3344,'2015-10-11 07:16:45', 'Mendoza', 2600.00, 200.00),
-	   (4,6677,'2015-07-06 15:30:14', 'Buenos Aires', 2250.00, 150.00) 
-     ;
+	   (4,6677,'2015-07-06 15:30:14', 'Buenos Aires', 2250.00, 150.00);
       
+
  
 insert into lleva(id_acoplado,id_transporte,id_viaje)
 values(101,2222,1122),   
 	  (101,5555,3344),  
       (401,1111,4455),  
-      (601,4444,6677)
-      ;  
+      (601,4444,6677);  
 
       
 /*select *
@@ -160,8 +168,7 @@ values(1,'motor',15000),
       (5,'amortiguador',1200),
       (6,'volante',8750),
       (7,'paragolpes',4750),
-      (8,'guardabarro',1250)
-      ;
+      (8,'guardabarro',1250);
 
 insert into orden (id_orden,id_repuesto,cantidad)
 values	(1,1,1),
