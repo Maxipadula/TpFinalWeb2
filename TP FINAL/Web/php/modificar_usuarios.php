@@ -25,6 +25,7 @@
 				</div>
 				</br>
 				<input type="submit" value="Seguir">
+				<input type='button' onclick='history.back()' name='volver atrás' value='Volver'></form>
 				
 		</div>
 	

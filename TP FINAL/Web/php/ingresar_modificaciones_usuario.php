@@ -56,4 +56,6 @@
 									   WHERE id_usuario = '".$id_usuario."'")or die (mysql_error());
 		
 	}
+	
+	header("location:usuarios_datos.php");
 ?>
