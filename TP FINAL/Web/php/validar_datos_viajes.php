@@ -2,21 +2,26 @@
  	<?PHP 
  	session_start() ; 
  	 
- 	$id_us =$_POST ["id_usuario"]; 
- 	$usua =$_POST ["usuario"]; 
- 	$nombree =$_POST ["nombre"]; 
- 	$passw =$_POST ["pass"]; 
- 	$fecha_na =$_POST ["fecha_nacimiento"]; 
- 	$tipo_d =$_POST ["id_tipo_documento"]; 
- 	$numero_doc =$_POST ["num_doc"]; 
- 	$id_lic =$_POST ["licencia"]; 
- 	$rol =$_POST ["rol"]; 
- 	 
+ 	$id_viaj =$_POST ["id_viajes"]; 
+ 	$id_usua =$_POST ["id_usuario"]; 
+ 	$id_trnsp =$_POST ["id_transpo"]; 
+ 	$orig =$_POST ["origen"]; 
+ 	$destin =$_POST ["destino"]; 
+ 	$client =$_POST ["cliente"]; 
+ 	$fecha_inic =$_POST ["fecha_inicio"]; 
+ 	$carg =$_POST ["carga"]; 
+	$cero="0";
 	 
  	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta"); 
  		mysql_select_db ("tpFinal",$conexion) or die ("no db"); 
  	 
- 	$consulta2= mysql_query(" SELECT id_tipo_doc tipo 
+	  $insert_usuario = mysql_query("insert into viaje (id_viaje, id_usuario, id_transporte, origen, km_recorridos, destino, cliente, fecha_inicio, fecha_fin, carga) 
+ 									values ('".$id_viaj."','".$id_usua."','".$id_trnsp."','".$orig."','".$cero."','".$destin."','".$client."', '".$fecha_inic."','".$cero."', '".$carg."')  
+ 										    ;")or die (mysql_error()); 
+	 
+	 
+	 
+ 	/*$consulta2= mysql_query(" SELECT id_tipo_doc tipo 
                                FROM tipo_doc 
                                WHERE descripcion = '".$tipo_d."' ") or die ("no q3"); 
  	 
@@ -39,9 +44,7 @@
  	//echo $cod_rol; PARA VER QUE TRAEN	 
        
   
- 	$insert_usuario = mysql_query("insert into usuario (id_usuario, usuario, nombre, pass, fecha_nacimiento, id_tipo_doc, num_doc, id_licencia, codigo_rol) 
- 									values ('".$id_us."','".$usua."','".$nombree."','".$passw."', '".$fecha_na."', '".$id_tipo_d."', '".$numero_doc."', '".$id_lic."', '".$cod_rol."')  
- 										    ;")or die (mysql_error()); 
+*/
  											 
 	echo "<p>Los datos han sido guardados con exito.</p>    
   

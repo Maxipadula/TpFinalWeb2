@@ -5,8 +5,8 @@ values	(1, 'chofer'),
 		(2, 'administrador'),
 		(3, 'supervisor');
         
-select *
-from rol;
+/*select *
+from rol;*/
 
 insert into tipo_doc (id_tipo_doc, descripcion)
 values (1, 'DNI'), 
@@ -57,6 +57,9 @@ insert into permiso(id_permiso, codigo_rol, descripcion)
 		  (2,2,'administrador_home'),
 		  (3,3,'supervisor_home');
           
+/*select * 
+from permiso;*/
+          
 insert into usuario (id_usuario, usuario, nombre, pass, fecha_nacimiento, id_tipo_doc, num_doc, id_licencia, codigo_rol)
 values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 'NO',3),
 		(20, 'santi','Santiago Ares','123kjl','1984-04-23', 1, '32147563','B.1',2),
@@ -84,9 +87,6 @@ values	(100, 'HD 78'),
 /*select *
 from modelo;*/
 
-
-
-
 insert into estado (id_estado, descripcion)
 	values('mm','muy malo'),
            ('m','malo'),
@@ -110,6 +110,17 @@ values  (123, 100, 1,5225.00),
         (789, 500, 2, 2500.00),
         (147, 600, 4,5000.00);
 
+/*SELECT U.id_vehiculo, IM.descripcion, MA.descripcion, U.capacidad_carga 
+									FROM vehiculo U inner join
+									modelo IM on U.id_modelo = IM.id_modelo inner join 
+									marca MA on U.id_marca = MA.id_marca;*/
+
+select * 
+from vehiculo;
+
+/*insert into vehiculo (id_vehiculo, id_modelo, id_marca , capacidad_carga) 
+ 									values (800,100,4,4521);*/
+
 insert into transporte (id_transporte, id_estado, id_vehiculo, num_chasis, num_motor, año_fabricacion,patente)
 values	(1111, 'b', 123, 236589, 147852, 2005,'fkn 106'),
         (2222, 'mb', 123, 963258, 852147, 2013,'fmj 750'),
@@ -120,8 +131,18 @@ values	(1111, 'b', 123, 236589, 147852, 2005,'fkn 106'),
         (7777, 'mb',147, 134679, 976431, 2013,'oki 435'),
         (8888, 'r',789, 1357913, 791357, 2014,'dma 124');
         
+
+ 
+/*SELECT T.id_transporte, E.descripcion Estado, M.descripcion Marca, MO.descripcion Modelo, num_chasis NroChasis, num_motor, año_fabricacion, patente
+										  FROM transporte T inner join 
+											   estado E on T.id_estado = E.id_estado inner join 
+											   vehiculo V on T.id_vehiculo = V.id_vehiculo inner join 
+											   marca M on V.id_marca = M.id_marca inner join 
+											   modelo MO on V.id_modelo = MO.id_modelo;*/      
+        
 /*select *
 from transporte;*/
+
 insert into acoplado (id_acoplado, descripcion)
 values	(101, 'acoplado1'),
 		(201, 'acoplado2'),
@@ -129,6 +150,9 @@ values	(101, 'acoplado1'),
 		(401, 'acoplado4'),
 		(501, 'acolpado5'),
 		(601, 'acoplado6');
+    
+/*select *
+from acoplado;*/    
 
 insert into viaje (id_viaje, id_usuario, id_transporte, origen, km_recorridos,
 				 destino, cliente, fecha_inicio, fecha_fin, carga)
@@ -148,7 +172,8 @@ values (1,1122,'2015-06-05 15:11:25', 'Entre Rios', 5000.00, 250.00),
 	   (3,3344,'2015-10-11 07:16:45', 'Mendoza', 2600.00, 200.00),
 	   (4,6677,'2015-07-06 15:30:14', 'Buenos Aires', 2250.00, 150.00);
       
-
+/*select *
+from vale_combustible;*/
  
 insert into lleva(id_acoplado,id_transporte,id_viaje)
 values(101,2222,1122),   
@@ -156,7 +181,6 @@ values(101,2222,1122),
       (401,1111,4455),  
       (601,4444,6677);  
 
-      
 /*select *
 from viaje;*/
 
@@ -169,6 +193,9 @@ values(1,'motor',15000),
       (6,'volante',8750),
       (7,'paragolpes',4750),
       (8,'guardabarro',1250);
+      
+/*select * 
+from repuesto;*/      
 
 insert into orden (id_orden,id_repuesto,cantidad)
 values	(1,1,1),
@@ -181,6 +208,9 @@ values	(1,1,1),
         (8,1,1),
         (9,8,2);
         
+/*select * 
+from orden;*/        
+        
 insert into mecanico (id_mecanico, nombre)
 values	(001, 'Yanet Rodriguez'),
 		(002, 'Monica Nicolosi'),
@@ -188,6 +218,9 @@ values	(001, 'Yanet Rodriguez'),
 		(004, 'Silvia Escobar'),
 		(005, 'Ivan Lomba'),
 		(006, 'Lucrecio Lunch');
+        
+select * 
+from mecanico;     
         
 insert into reparacion (codigo_reparacion, id_mecanico, id_transporte,id_orden, costo, fecha)
 values	(123, 006, 5555,1, 15000, '2015-08-06'),
@@ -200,8 +233,8 @@ values	(123, 006, 5555,1, 15000, '2015-08-06'),
         (130, 004, 2222,8,7450,'2015-03-06'),
 		(131, 003, 6666,9, 2500,'2015-06-26');
         
-        
-        
+/*select * 
+from reparacion;*/        
         
 SELECT * 
 						FROM usuario u join 
