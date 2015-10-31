@@ -4,50 +4,82 @@
 	
 		session_start() ;
 		
-		$modificar =$_POST ["usuario_a_modificar"];
-		$codigo =$_POST ["codigo_modificar"];
+		$modificar =$_SESSION ["usuario_a_modificar"];
+	
+
 		
 		$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
 	    mysql_select_db ("tpFinal",$conexion) or die ("no db");
 		
-		switch ($codigo){
-			case 1: 
-				echo "USUARIO";
-				echo "<h4>Colocar el nuevo usuario:</h4> ";
-				echo "<input type='text' name='usuario_nuevo'>";
-						  
+		echo "<form class='chequeado' method='post' action='ingresar_modificaciones_usuario.php'>";		  
+			
+		ifs('usuario');
+		ifs('nombre');
+		ifs('password');
+		ifs('fecha');
+		
+	    if(chequeado('licencia'))
+		{
+		echo "</br>Licencia</br>
+		<select name='licencia'>
+		<option value='NO' selected='selected'>NO</option>
+		<option value='A.1'>A.1</option>
+        <option value='B.1'>B.1</option>
+        <option value='B.2'>B.2</option>
+		<option value='C'>C</option>
+		<option value='D.1'>D.1</option>
+		<option value='D.2'>D.2</option>
+		<option value='E.1'>E.1</option>
+		<option value='E.2'>E.2</option>
+		<option value='F'>F</option>
+		</select>"
+		;}
+		
+		  if(chequeado('rol'))
+		{
+		echo "</br>Rol</br>
+		  <select name='rol'>    
+		  <option value='chofer' selected='selected'>Chofer</option>
+          <option value='administrador'>Administrador</option>
+          <option value='supervisor'>Supervisor</option>
+          </select>"
+		;}
+		
+		
+		echo "</br> <input type='submit' value='Enviar'/>
+							<input type='reset' value='Borrar'/>
+							<input type='button' onclick='history.back()' name='volver atrás' value='Volver'></form> ";
+		
+		function ifs ($check){
+		
+			if(chequeado($check))
+			{
+			  echo "</br>
+					 ".ucfirst($check)."
+						</br>
+						<input type='text' name='".$check."'>
+						
+					</div>
+					
+					</br>";
+		
 
-
-				//$usuario =("UPDATE usuario
-					//	    SET usuario = usuario_nuevo
-						//	where id_usuario = '".$modificar."')" or die ("no q");
-				
-				mysql_query("UPDATE usuario SET usuario = usuario_nuevo WHERE id_usuario = '$modificar'")
-				or die(mysql_error());
-				
+			};
 		}
-				//$resultado = mysql_query($usuario);
-				
-				//echo " <a href='./modificar_usuarios0.php'>Modificar</a>";
-				
-			
-			/*break;
-			
-			case 2: 
-
-			break;
-			
-			case 3: 
-
-			break;
-			
-			case 4: 
-
-			break;
-			
-			case 5: 
-	
-			break;*/
+		
+		function chequeado($valor){
+			if(!empty($_POST["datos"]))
+			{
+				foreach($_POST["datos"] as $chkval)
+				{
+					if($chkval == $valor)
+					{
+						return true;
+					}
+				}
+			}
+        return false;
+        }
 			
 		
 	

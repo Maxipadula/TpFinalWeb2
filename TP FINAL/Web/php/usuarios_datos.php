@@ -6,7 +6,7 @@
 		  
            <a href="./agregar_usuarios.php">AGREGAR</a>
 		   <br>
-		   <a href="./modificar_usuarios0.php">MODIFICAR</a>
+		   <a href="./modificar_usuarios.php">MODIFICAR</a>
 		   <br>
 		   <a href="./eliminar_usuarios.php">ELIMINAR</a>
 		   <br>
