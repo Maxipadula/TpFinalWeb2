@@ -120,7 +120,7 @@ values  (123, 100, 1,5225.00),
 										FROM vehiculo V join
 										     modelo MO on V.id_modelo = MO.id_modelo join
 											 marca MA on V.id_marca = MA.id_marca
-										WHERE MO.descripcion = 'HD 78' and MA.descripcion = 'Hyundai'
+										WHERE MO.descripcion = 'HD 78' and MA.descripcion = 'Hyundai';
 
 select * 
 from vehiculo;

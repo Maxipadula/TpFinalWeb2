@@ -1,14 +1,15 @@
 <html>
 	<head>
+		<title>Sistema De Gestion Logistica</title>
+		<LINK REL="Stylesheet" HREF="../Css/login.css" TYPE="text/css">
 	</head>
 	
-	<body style="background: black">
-		<IMG SRC="nada.jpg">
-		<LINK REL="Stylesheet" HREF="login.css" TYPE="text/css">
-		<H1>
-		<IMG style="float: left" SRC="mapaa.jpg">  <!--el float es para que la imagen este a la izquierda del formulario-->
-		</H1>
-		<H4>
+	<body>
+		
+		<div id='divHeader'>
+			<h1> Sistema de Gestión Logistica</h1>
+		</div>
+		
 		<form class='contacto' method="post" action="validar.php">
 			<div id="contacto">
 				
@@ -22,18 +23,14 @@
 				</br>
 				
 				<div><label>PASSWORD
+				</br>
 					<input type="password" name="clave">
 					</label>
 				</div>
 				</br>
-				
 				<input type="submit" value="Iniciar Sesion">
-				</h4>
 			</div>
 		</form>
-		<H2>
-		<IMG style="float: right" SRC="Rutas.jpg">  <!--el float es para que la imagen este a la derecha del formulario-->
-		</H2>
 	</body>
 </html>
 			
