@@ -15,6 +15,8 @@
 		   <br>
            <a href="./vehiculos_datos.php">VEHICULOS</a>
 		   <br>
+           <a href="./transportes_datos.php">TRANSPORTES</a>
+		   <br>
            <a href="./mecanicos_datos.php">MECANICOS</a>
 		    <br>
            <a href="./viajes_datos.php">VIAJES</a>

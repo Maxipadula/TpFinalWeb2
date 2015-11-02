@@ -55,14 +55,17 @@
  				$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
 				mysql_select_db ("tpFinal",$conexion) or die ("no db");
 		
-				$consulta  = mysql_query ("SELECT id_transporte, patente
-											FROM transporte") or die ("no q");
+				$consulta  = mysql_query ("SELECT t.id_transporte id, t.patente patente,M.descripcion marca,MO.descripcion modelo
+											FROM transporte T join 
+											     vehiculo V on V.id_vehiculo = T.id_vehiculo join
+												 marca M on M.id_marca = V.id_marca join
+												 modelo MO on MO.id_modelo = V.id_modelo") or die ("no q");
 			
 				if ($row = mysql_fetch_array($consulta)){
 				echo "<table border = '1'> \n";
-				echo "<tr><td>id_transporte</td><td>patente</td></tr> \n";
+				echo "<tr><td>id_transporte</td><td>patente</td><td>vehiculo</td></tr> \n";
 				do{
-					echo "<tr><td>".$row["id_transporte"]."</td><td>".$row["patente"]."</td></tr> \n"; 
+					echo "<tr><td>".$row["id"]."</td><td>".$row["patente"]."</td><td>".$row["marca"]."  ".$row["modelo"]."</td></tr> \n"; 
 					
 				} while ($row = mysql_fetch_array ($consulta));
 				echo "</table> \n";

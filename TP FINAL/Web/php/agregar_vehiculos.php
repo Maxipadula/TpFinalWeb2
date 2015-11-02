@@ -1,6 +1,8 @@
  <html>
 
 	<?PHP
+			session_start();
+			
 				$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
 	            mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			
@@ -27,30 +29,17 @@
 				
  				<div><label>MODELO
  				</br>
-				<select name="modelo"> 
-					 <option value="nada" selected="selected"></option>
-					 <option value="HD 78">HD 78</option>
-                     <option value="HD 65">HD 65</option>
-                     <option value="Oln 2.5 CS">Oln 2.5 CS</option>
-					 <option value="Maxity">Maxity</option>
-                </select>	
- 				</label>
+				<input type="text" name="modelo">
  				</div>
 				<br>
 				
 				<div><label>MARCA
  				</br>
-			    <select name="marca"> 
-				     <option value="nada" selected="selected"></option>
-					 <option value="Hyundai">Hyundai</option>
-                     <option value="Foton">Foton</option>
-                     <option value="Renult">Renult</option>
-				</select>
- 				</label>
+				<input type="text" name="marca">
  				</div>
 				<br>
 				
-				<div><label>CAPACIDAD CARGA
+				<div><label>CAPACIDAD DE CARGA
 					</br>
  					<input type="text" name="capacidad_carga">
  					</label>

@@ -107,7 +107,7 @@ create table if not exists vehiculo
      id_estado varchar(2),
      num_chasis int,
      num_motor int,
-     año_fabricacion int,
+     anio_fabricacion int,
      patente varchar(30) unique,
      constraint id_vehiculo_fk foreign key(id_vehiculo) references vehiculo (id_vehiculo)
      ON DELETE CASCADE

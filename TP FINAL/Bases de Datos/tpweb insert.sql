@@ -87,6 +87,7 @@ values	(100, 'HD 78'),
 /*select *
 from modelo;*/
 
+
 insert into estado (id_estado, descripcion)
 	values('mm','muy malo'),
            ('m','malo'),
@@ -99,7 +100,7 @@ from estado;*/
 insert into marca(id_marca, descripcion)
 values (1, 'Hyundai'),
 	   (2, 'Foton'),
-       (4, 'Renult');
+       (4, 'Renault');
        
 /*select *
 from marca;*/
@@ -114,6 +115,12 @@ values  (123, 100, 1,5225.00),
 									FROM vehiculo U inner join
 									modelo IM on U.id_modelo = IM.id_modelo inner join 
 									marca MA on U.id_marca = MA.id_marca;*/
+                                    
+	SELECT id_vehiculo ID
+										FROM vehiculo V join
+										     modelo MO on V.id_modelo = MO.id_modelo join
+											 marca MA on V.id_marca = MA.id_marca
+										WHERE MO.descripcion = 'HD 78' and MA.descripcion = 'Hyundai'
 
 select * 
 from vehiculo;
@@ -121,7 +128,7 @@ from vehiculo;
 /*insert into vehiculo (id_vehiculo, id_modelo, id_marca , capacidad_carga) 
  									values (800,100,4,4521);*/
 
-insert into transporte (id_transporte, id_estado, id_vehiculo, num_chasis, num_motor, año_fabricacion,patente)
+insert into transporte (id_transporte, id_estado, id_vehiculo, num_chasis, num_motor, anio_fabricacion,patente)
 values	(1111, 'b', 123, 236589, 147852, 2005,'fkn 106'),
         (2222, 'mb', 123, 963258, 852147, 2013,'fmj 750'),
         (3333, 'mb', 123, 789456, 321987, 2014,'hgp 650'),

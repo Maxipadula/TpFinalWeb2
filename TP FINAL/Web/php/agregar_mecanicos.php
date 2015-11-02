@@ -1,6 +1,7 @@
  <html>
 
-	<?PHP
+	<?PHP		
+			session_start();	
 				$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
 	            mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			
@@ -15,7 +16,7 @@
 			$id_mecanico +=1;
 	?>
  	FORMULARIO PARA TABLA MECANICO:
- 	<form class='contacto' method="post" action="validar_datos_mecanicos.php">
+ 	<form class='contacto' method="post" name="mecanico" action="validar_datos_mecanicos.php">
  		<div id="contacto">
  				</br>
  				<div><label>ID
@@ -31,12 +32,21 @@
  				</label>
  				</div>
  				</br>
-							
-				<input type="submit" value="Agregar">
+				
+		
+				
+				<input type="radio" name="internoexterno" value="interno" >Interno<br>
+				<input type="radio" name="internoexterno" value="externo" onclick="document.mecanico.empresa.disabled=!document.mecanico.empresa.disabled">Externo			
+			
 				<br>
+				Empresa
+				<input type ="text" name="empresa" disabled>
+				<br><br>
+				<input type="submit" value="Agregar">
+				<input type="submit" value="Atras" onclick = "location='mecanicos_datos.php'"/>
  		</div>
  	</form>
 	
-	<input type="submit" value="Atras" onclick = "location='mecanicos_datos.php'"/>
+	
  
  </html>

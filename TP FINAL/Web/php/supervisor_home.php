@@ -33,7 +33,7 @@
        
 			<a href="./consulta_datos.php">CONSULTA</a>
             <a href="./registrar_datos.php">REGISTROS</a>
-            <a href="./home.php">SALIR</a>
+            <a href="./logn.php">SALIR</a>
 
 	</nav>
 				</br>
