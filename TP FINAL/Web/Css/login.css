@@ -18,6 +18,40 @@ body {
 	color: #FFFFFF;
 }
 
-h1{
-	
+#divNav{
+	text-align: center;
+	background-color: #455A64;
+	color:#FFFFFF;
 }
+
+#divContenedor{
+	margin-left: 200px;
+	margin-right: 200px;
+}
+
+/* Color Hipervinculos*/
+a{
+	color:#FFFFFF;
+}
+a:link
+{
+   text-decoration: none;
+}
+a:visited
+{
+   text-decoration: none;
+}
+a:hover
+{
+   text-decoration: underline;
+}
+
+/*   Boton    */
+.boton{
+        color:white;
+        background:#607D8B;
+        border:0px;
+        width:80px;
+        height:30px;
+        font-family: 'Ubuntu', sans-serif;
+       }

@@ -18,32 +18,32 @@
 
 <html>
 	<head>
+		<LINK REL="Stylesheet" HREF="../css/login.css" TYPE="text/css">
 	</head>
 	
-	<body style="background: black">
-		<IMG SRC="nada.jpg">
-		<LINK REL="Stylesheet" HREF="login.css" TYPE="text/css">
-		<H1>
-		<IMG style="float: left" SRC="mapaa.jpg">  <!--el float es para que la imagen este a la izquierda del formulario-->
-		</H1>
-		<H4>
-		<form class='contacto' method="post" action="validar.php">
-			<nav>
-		
-       
-			<a href="./consulta_datos.php">CONSULTA</a>
-            <a href="./registrar_datos.php">REGISTROS</a>
-            <a href="./logn.php">SALIR</a>
+	<body>
+		<div id='divHeader'>
+			<h1> Sistema de Gestión Logistica</h1>
+		</div>
 
-	</nav>
+			<nav id='divNav'>
+		
+       				<a href="./consulta_datos.php"> CONSULTA &nbsp;&nbsp;</a>
+       			    <a href="./registrar_datos.php"> REGISTROS &nbsp;&nbsp;</a>
+            		<a href="./logn.php"> SALIR &nbsp;&nbsp;</a>
+			</nav>
+
+		<div id="divContenedor">
+
+			<form class='contacto' method="post" action="validar.php">
+				
 				</br>
-			
-				<input type="submit" value="Ingresar">
-				</h4>
-		</form>
-		<H2>
-		<IMG style="float: right" SRC="Rutas.jpg">  <!--el float es para que la imagen este a la derecha del formulario-->
-		</H2>
+	
+				<input type="submit" value="Ingresar" class= "boton">
+
+			</form>
+
+		</div>
+
 	</body>
-</html>
 </html>
