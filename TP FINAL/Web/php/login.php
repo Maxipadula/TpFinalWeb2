@@ -1,6 +1,8 @@
 <html>
 	<head>
+	<meta charset="UTF-8">
 		<title>Sistema De Gestion Logistica</title>
+		
 		<LINK REL="Stylesheet" HREF="../Css/login.css" TYPE="text/css">
 	</head>
 	

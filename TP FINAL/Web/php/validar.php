@@ -30,7 +30,7 @@
 				
 				 $_SESSION["nombre"] = $fila1['nombre'] ;
 				 
-	             header("location:./chofer_home.php");
+	             header("location:./CHOFER/chofer_home.php");
 				 
 				 
 			}else if ($fila1["codigo_rol"] == 2){
@@ -40,7 +40,7 @@
 			     $_SESSION["nombre"] = $fila1['nombre'] ;
 				
 				 
-                 header ("location:./administrador_home.php");
+                 header ("location:./ADMINISTRADOR/administrador_home.php");
 	        
             
 			
@@ -51,7 +51,7 @@
 				 $_SESSION["nombre"] = $fila1['nombre'] ;
 				 
 				 
-                 header("location:./supervisor_home.php");
+                 header("location:./SUPERVISOR/supervisor_home.php");
 			 
 			
 			}else header("location:error.php");
