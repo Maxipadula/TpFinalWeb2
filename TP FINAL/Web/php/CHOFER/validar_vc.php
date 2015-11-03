@@ -9,7 +9,9 @@
 	
 
 	
-	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
+		include ('../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
 	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 	
 	
@@ -29,5 +31,5 @@
 	
 							
 	
-	header ("location:chofer_home.php");
+	header ("location:".$chofer_home."");
 ?>

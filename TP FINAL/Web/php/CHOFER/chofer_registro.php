@@ -9,8 +9,10 @@
 			 $permiso ="chofer_registro";
 			 $id = $_SESSION["id_usuario"];
 			 
-			 $conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-	         mysql_select_db ("tpFinal",$conexion) or die ("no db");
+			 	include ('../rutas.php');
+	
+			$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+			mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			 
 			 permisos($permiso,$id);
 			 
@@ -35,7 +37,7 @@
 		?>
 			<h2> REGISTRO DE VIAJE</h2>
 			
-			<form class='contacto' method="post" action="validar_registro_chofer.php">
+			<form class='contacto' method="post" action="<?php echo $chofer_validar_registro_viaje?>">
 			<div id="contacto">
 				
 				</br>

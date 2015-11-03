@@ -6,8 +6,10 @@
 	$num_usu_eliminar =$_POST ["numero_usuario_eliminar"];
 	
 	
-	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-		mysql_select_db ("tpFinal",$conexion) or die ("no db");
+		include ('../../../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 		
 	$consulta =("SELECT U.id_usuario 
 	                      FROM usuario U inner join
@@ -24,7 +26,7 @@
 	mysql_query("DELETE FROM usuario WHERE id_usuario = '$usuario_eliminar'")
     or die(mysql_error()); 
 	
-	header('Location: usuarios_datos.php');
+	header("Location: ".$usuarios_datos."");
 	?>
 	
 </html>

@@ -1,9 +1,10 @@
 <html>
+ <?php 	include ('../../../rutas.php');?>
 	SELECCIONAR USUARIO A MODIFICAR
 	<br>
 	Colocar tipo y numero de documento del usuario a modificar: 
 		<br>
-		<form class='contacto' method="post" action="usuario_a_modificar.php">
+		<form class='contacto' method="post" action="<?php echo $usuario_a_modificar ?>">
 	
 		<div id="contacto">
 				</br>

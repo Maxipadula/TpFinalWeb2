@@ -1,8 +1,10 @@
  <html>
 <meta charset="UTF-8">
 	<?PHP
-				$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-	            mysql_select_db ("tpFinal",$conexion) or die ("no db");
+				include ('../../../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			
 			$consulta_id= mysql_query(" SELECT MAX( id_usuario ) ID
                                         FROM usuario ") or die ("no query");
@@ -15,7 +17,7 @@
 			$id_usuario +=10;
 	?>
  	DATOS DEL USUARIO A AGREGAR:
- 	<form class='contacto' method="post" action="validar_datos_usuarios.php">
+ 	<form class='contacto' method="post" action="<?php echo  $validar_usuario ?>">
  		<div id="contacto">
  				</br>
  				<div><label>ID

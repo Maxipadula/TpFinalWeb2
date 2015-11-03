@@ -3,7 +3,7 @@
 	<h2>MODIFICAR USUARIOS</H2>
 		Que dato desea modificar? <br>
 
-	<form class='contacto' method="post" action="modificar_usuarios3.php">
+	<form class='contacto' method="post" action="<?php echo $modificar_usuarios3?>">
 
 	<br>
 	<input type="checkbox" name="datos[]" value="usuario">Usuario

@@ -9,8 +9,10 @@
 			 $permiso =$_SESSION["permiso"];
 			 $id = $_SESSION["id_usuario"];
 			 
-			 $conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-	         mysql_select_db ("tpFinal",$conexion) or die ("no db");
+				include ('../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			 
 			 permisos($permiso,$id);
 			 
@@ -30,7 +32,7 @@
 		?>
 			<h2> VALE DE COMBUSTIBLE </h2>
 			
-			<form class='contacto' method="post" action="validar_vc.php">
+			<form class='contacto' method="post" action="<?php echo $validar_vc?>">
 			<div id="contacto">
 				
 				</br>

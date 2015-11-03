@@ -6,8 +6,10 @@
 
 	<?PHP		
 			session_start();	
-				$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-	            mysql_select_db ("tpFinal",$conexion) or die ("no db");
+			include ('../../../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			
 			$consulta_id= mysql_query(" SELECT MAX( id_transporte ) ID
                                         FROM transporte ") or die ("no query");
@@ -23,7 +25,7 @@
 			
 	?>
  	 AGREGAR TRANSPORTES:
- 	 <form class='contacto' method="post" name="transporte" action="validar_datos_transportes.php">
+ 	 <form class='contacto' method="post" name="transporte" action="">
  		<div id="contacto">
  				</br>
  				<div><label>ID

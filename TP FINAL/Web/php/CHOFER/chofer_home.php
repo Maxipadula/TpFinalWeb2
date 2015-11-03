@@ -6,6 +6,8 @@
 		
 		<?PHP
 	        session_start();
+			
+			include ("../rutas.php");
 	
 							
 	        if ( isset ($_SESSION["id_usuario"])){
@@ -17,16 +19,16 @@
 	        else{
 		     session_destroy();
     
-              header("location:login.php");
+              header("location:".$login."");
 	        }
         ?> 
 	
 	<nav>
 		
        <ul>
-           <li><a href="./registrar_vc.php">REGISTRAR VALE DE COMBUSTIBLE</a></li>
-           <li><a href="./chofer_registro.php">CREAR REGISTRO DE VIAJE</a></li>
-           <li><a href="../login.php">SALIR</a></li>  
+           <li><a href="./<?php echo $registrar_vc?>">REGISTRAR VALE DE COMBUSTIBLE</a></li>
+           <li><a href="./<?php echo $chofer_registro_viaje?>">CREAR REGISTRO DE VIAJE</a></li>
+           <li><a href="../<?php echo $login?>">SALIR</a></li>  
 
        </ul>
  

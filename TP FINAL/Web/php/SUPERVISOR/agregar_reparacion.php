@@ -1,8 +1,10 @@
  <html>
 
 	<?PHP
-				$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-	            mysql_select_db ("tpFinal",$conexion) or die ("no db");
+	include ('../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			
 			$consulta_id= mysql_query(" SELECT MAX( codigo_reparacion ) IDR
                                         FROM reparacion ") or die ("no query");
@@ -15,7 +17,7 @@
 			$codigo_reparacion +=1;
 	?>
  	FORMULARIO PARA TABLA REPARACION:
- 	<form class='contacto' method="post" action="validar_datos_reparacion.php">
+ 	<form class='contacto' method="post" action="<?php echo $validar_datos_reparacion ?>">
  		<div id="contacto">
  				</br>
  				<div><label>CODIGO
@@ -131,6 +133,6 @@
  		</div>
  	</form>
 	
-	<input type="submit" value="Atras" onclick = "location='reparacion_datos.php'"/>
+	<input type="submit" value="Atras" onclick = "location='<?php echo $reparacion_datos?>'"/>
  
  </html>

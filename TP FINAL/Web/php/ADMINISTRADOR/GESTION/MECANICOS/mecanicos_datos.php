@@ -1,14 +1,15 @@
 <html>
 	<body>
+		<?php include('../../../rutas.php'); ?>
 
 			<h2> MODIFICAR COSAS DE LOS MECANICOS </h2>
 			
 		  
-           <a href="./agregar_mecanicos.php">AGREGAR</a>
+           <a href="./<?php echo $agregar_mecanico?>">AGREGAR</a>
 		   <br>
-		   <a href="./modificar_mecanicos.php">MODIFICAR</a>
+		   <a href="./<?php echo $modificar_mecanico?>">MODIFICAR</a>
 		   <br>
-		   <a href="./eliminar_mecanicos.php">ELIMINAR</a>
+		   <a href="./<?php echo $eliminar_mecanico?>">ELIMINAR</a>
 		   <br>
 		   
 	</body>

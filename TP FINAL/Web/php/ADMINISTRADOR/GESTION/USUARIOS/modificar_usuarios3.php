@@ -7,8 +7,10 @@
 	
 
  		
- 		$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
- 	    mysql_select_db ("tpFinal",$conexion) or die ("no db");
+ 		include ('../../../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			
 		
 		echo "<form class='chequeado' method='post' action='ingresar_modificaciones_usuario.php'>";

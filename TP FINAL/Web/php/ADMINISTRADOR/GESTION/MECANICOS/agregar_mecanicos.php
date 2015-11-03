@@ -1,9 +1,10 @@
  <html>
 
 	<?PHP		
-			session_start();	
-				$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-	            mysql_select_db ("tpFinal",$conexion) or die ("no db");
+				include ('../../../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			
 			$consulta_id= mysql_query(" SELECT MAX( id_mecanico ) IDM
                                         FROM mecanico ") or die ("no query");
@@ -16,7 +17,7 @@
 			$id_mecanico +=1;
 	?>
  	FORMULARIO PARA TABLA MECANICO:
- 	<form class='contacto' method="post" name="mecanico" action="validar_datos_mecanicos.php">
+ 	<form class='contacto' method="post" name="mecanico" action="<?php echo $validar_datos_mecanicos ?>">
  		<div id="contacto">
  				</br>
  				<div><label>ID
@@ -43,7 +44,7 @@
 				<input type ="text" name="empresa" disabled>
 				<br><br>
 				<input type="submit" value="Agregar">
-				<input type="submit" value="Atras" onclick = "location='mecanicos_datos.php'"/>
+				<input type="submit" value="Atras" onclick = "location='<?php echo $mecanicos_datos ?>'"/>
  		</div>
  	</form>
 	

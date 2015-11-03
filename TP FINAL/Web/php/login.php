@@ -1,4 +1,6 @@
 <html>
+
+<?php include "rutas.php"; ?>
 	<head>
 	<meta charset="UTF-8">
 		<title>Sistema De Gestion Logistica</title>
@@ -12,7 +14,7 @@
 			<h1> Sistema de Gestión Logistica</h1>
 		</div>
 		
-		<form class='contacto' method="post" action="validar.php">
+		<form class='contacto' method="post" action="<?php echo $validar?>">
 			<div id="contacto">
 				
 				</br>

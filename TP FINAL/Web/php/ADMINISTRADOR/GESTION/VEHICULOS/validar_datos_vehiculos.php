@@ -8,8 +8,10 @@
  	$cap_carga =$_POST ["capacidad_carga"]; 
  	 
 	 
- 	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta"); 
- 		mysql_select_db ("tpFinal",$conexion) or die ("no db"); 
+ 	include ('../../../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
  	 
  	$consulta2= mysql_query(" SELECT id_modelo MODELO
                                FROM modelo 
@@ -68,7 +70,7 @@
  									values ('".$id_vehi."','".$model_id."','".$id_mar."','".$cap_carga."')  
  										    ;")or die (mysql_error()); 
  											 
-	header('Location: vehiculos_datos.php');
+	header("Location: ".$vehiculos_datos."");
  							 
   
  	?> 

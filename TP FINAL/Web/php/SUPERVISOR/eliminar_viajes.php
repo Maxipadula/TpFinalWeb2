@@ -3,8 +3,10 @@
 	
 	<?php
 		
-		$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-		mysql_select_db ("tpFinal",$conexion) or die ("no db");
+			include ('../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 		
 		 $consulta  = mysql_query ("SELECT id_viaje, origen, destino, carga
 									FROM viaje ") or die ("no q");
@@ -22,7 +24,7 @@
 
 ?>
 	
-	<form class='contacto' method="post" action="validar_eliminacion_viaje.php">
+	<form class='contacto' method="post" action="<?php echo $validar_eliminacion_viaje ?>">
 	
 		<div id="contacto">
 				</br>

@@ -3,12 +3,13 @@
 
 			<h2> MODIFICAR COSAS DE LA REPARACION </h2>
 			
-		  
-           <a href="./agregar_reparacion.php">AGREGAR</a>
+			<?php include ("../rutas.php"); ?>
+			
+           <a href="./<?php echo $agregar_reparacion?>">AGREGAR</a>
 		   <br>
-		   <a href="./modificar_reparacion.php">MODIFICAR</a>
+		   <a href="./<?php echo $modificar_reparacion?>">MODIFICAR</a>
 		   <br>
-		   <a href="./eliminar_reparacion.php">ELIMINAR</a>
+		   <a href="./<?php echo $eliminar_reparacion?>">ELIMINAR</a>
 		   <br>
 		   
 	</body>

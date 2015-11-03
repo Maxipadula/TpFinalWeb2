@@ -1,14 +1,15 @@
 <html>
 	<body>
+		<?php include("../../../rutas.php"); ?>
 
 			<h2> MODIFICAR COSAS DE LOS PERMISOS </h2>
 			
 		  
-           <a href="./agregar_pemisos.php">AGREGAR</a>
+           <a href="./<?php echo  $agregar_permiso ?> ">AGREGAR</a>
 		   <br>
-		   <a href="./modificar_permisos.php">MODIFICAR</a>
+		   <a href="./<?php echo $modificar_permiso ?>">MODIFICAR</a>
 		   <br>
-		   <a href="./eliminar_permisos.php">ELIMINAR</a>
+		   <a href="./<?php echo $eliminar_permiso ?>">ELIMINAR</a>
 		   <br>
 		   
 	</body>

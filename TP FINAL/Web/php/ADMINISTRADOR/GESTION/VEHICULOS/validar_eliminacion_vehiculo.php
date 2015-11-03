@@ -5,8 +5,10 @@
 	$id_vehiculo_elim =$_POST ["id_vehiculo_eliminar"];
 	
 	
-	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-		mysql_select_db ("tpFinal",$conexion) or die ("no db");
+		include ('../../../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 		
 		 $consulta  = mysql_query ("SELECT id_vehiculo
 									FROM vehiculo 
@@ -21,7 +23,7 @@
 	
 	mysql_query("DELETE FROM vehiculo WHERE id_vehiculo = '$id_vehiculo_elim'")
     or die(mysql_error()); 
-	header('Location: usuarios_datos.php');
+	header("Location: ".$vehiculos_datos."");
 	?>
 	
 </html>

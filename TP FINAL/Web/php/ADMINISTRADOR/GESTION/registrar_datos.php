@@ -4,21 +4,22 @@
 	
 	<body>
 
+
 			<h2> RECURSOS A GESTIONAR </h2>
-			
+			<?php include ("../../rutas.php");?>
 		  
-           <a href="./USUARIOS/usuarios_datos.php">USUARIOS</a>
+           <a href="./<?php echo $usuarios_datos ?>">USUARIOS</a>
 		   <br>
-           <a href="./VEHICULOS/vehiculos_datos.php">VEHICULOS</a>
+           <a href="./<?php echo $vehiculos_datos ?>">VEHICULOS</a>
 		   <br>
-           <a href="./TRANSPORTES/transportes_datos.php">TRANSPORTES</a>
+           <a href="./<?php echo $transportes_datos ?>">TRANSPORTES</a>
 		   <br>
-           <a href="./MECANICOS/mecanicos_datos.php">MECANICOS</a>
+           <a href="./<?php echo $mecanicos_datos ?>">MECANICOS</a>
 
 		  <br>
 		  <br>
 		   <br>
-           <a href="../administrador_home.php">ATRAS</a>
+           <a href="../<?php echo $administrador_home2 ?>">ATRAS</a>
 		   
 		
        

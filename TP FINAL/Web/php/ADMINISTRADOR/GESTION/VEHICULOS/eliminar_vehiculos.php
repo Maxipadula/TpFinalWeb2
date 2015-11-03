@@ -3,8 +3,10 @@
 	<br>
 	<?php
 		
-		$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-		mysql_select_db ("tpFinal",$conexion) or die ("no db");
+			include ('../../../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 		
 		 $consulta  = mysql_query ("SELECT U.id_vehiculo id, IM.descripcion descri, MA.descripcion descrip, U.capacidad_carga  cap
 									FROM vehiculo U inner join
@@ -23,7 +25,7 @@
 		} 
 
 ?>
-	<form class='contacto' method="post" action="validar_eliminacion_vehiculo.php">
+	<form class='contacto' method="post" action="<?php echo  $validar_eliminacion_vehculos  ?>">
 	
 		<div id="contacto">
 				</br>

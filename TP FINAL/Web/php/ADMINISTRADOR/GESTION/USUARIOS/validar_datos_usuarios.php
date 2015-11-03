@@ -12,9 +12,10 @@
  	$id_lic =$_POST ["licencia"]; 
  	$rol =$_POST ["rol"]; 
  	 
-	 
- 	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta"); 
- 		mysql_select_db ("tpFinal",$conexion) or die ("no db"); 
+	include ('../../../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db"); 
  	 
  	$consulta2= mysql_query(" SELECT id_tipo_doc tipo 
                                FROM tipo_doc 
@@ -45,7 +46,7 @@
  											 
 
  							 
-	header ("location:usuarios_datos.php");
+	header ("location:".$usuarios_datos."");
  	?> 
 	
  	 

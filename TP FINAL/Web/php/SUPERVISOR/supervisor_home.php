@@ -1,9 +1,10 @@
 <html>
-
+<meta charset="UTF-8">
 <?PHP
 	 session_start();
 	 
-	 
+	  include ('../rutas.php');
+	  
 	  if ( isset ($_SESSION["nombre"])){
 		
 	   $nombre = $_SESSION["nombre"];
@@ -29,19 +30,12 @@
 			<nav id='divNav'>
 		
 
-       			    <a href="./registrar_datos_sup.php"> REGISTROS &nbsp;&nbsp;</a>
-            		<a href="./login.php"> SALIR &nbsp;&nbsp;</a>
+       			    <a href="./<?php echo $registrar_datos_sup ?>"> REGISTROS &nbsp;&nbsp;</a>
+            		<a href="./<?php echo $login?>"> SALIR &nbsp;&nbsp;</a>
 			</nav>
 
 		<div id="divContenedor">
 
-			<form class='contacto' method="post" action="validar.php">
-				
-				</br>
-	
-				<input type="submit" value="Ingresar" class= "boton">
-
-			</form>
 
 		</div>
 

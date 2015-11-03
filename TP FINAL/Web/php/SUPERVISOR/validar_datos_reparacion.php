@@ -9,8 +9,10 @@
  	$cost =$_POST ["costo"]; 
  	$fech =$_POST ["fecha"]; 
  	 	 
- 	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta"); 
- 	mysql_select_db ("tpFinal",$conexion) or die ("no db"); 
+ 		include ('../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db"); 
  	 
 	 $insert_reparacion = mysql_query("insert into reparacion (codigo_reparacion, id_mecanico, id_transporte, id_orden, costo, fecha) 
  									values ('".$codigo_reparac."','".$id_mecani."','".$id_transp."','".$id_ord."', '".$cost."', '".$fech."')  

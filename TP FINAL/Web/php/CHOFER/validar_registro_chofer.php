@@ -5,7 +5,9 @@
 	$km_recorridos =$_POST ["km_recorridos_viaje"];
 	$id_usuario = $_SESSION["id_usuario"];
 
-	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
+		include ('../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
 	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 	
 	$consulta1= mysql_query(" SELECT MAX( id_viaje ) viaje
@@ -32,6 +34,6 @@
 		
 	
 	if($update_viaje_fecha == true)
-			  header("location:./chofer_home.php");
+			  header("location:./".$chofer_home."");
 	
 ?>

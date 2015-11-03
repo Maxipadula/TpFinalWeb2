@@ -12,8 +12,10 @@
  	$carg =$_POST ["carga"]; 
 	$cero="0";
 	 
- 	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta"); 
- 		mysql_select_db ("tpFinal",$conexion) or die ("no db"); 
+ 		include ('../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
  	 
 	  $insert_usuario = mysql_query("insert into viaje (id_viaje, id_usuario, id_transporte, origen, km_recorridos, destino, cliente, fecha_inicio, fecha_fin, carga) 
  									values ('".$id_viaj."','".$id_usua."','".$id_trnsp."','".$orig."','".$cero."','".$destin."','".$client."', '".$fecha_inic."','".$cero."', '".$carg."')  

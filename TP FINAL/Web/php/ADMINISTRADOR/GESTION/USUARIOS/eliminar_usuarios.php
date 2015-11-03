@@ -1,7 +1,8 @@
 <html>
+<?php include ('../../../rutas.php'); ?>
 	SELECCIONAR EL USUARIO QUE QUIERAS ELIMINAR
 	
-	<form class='contacto' method="post" action="validar_eliminacion_usuarios.php">
+	<form class='contacto' method="post" action="<?php echo $validar_eliminacion_usuario ?>">
 	
 		<div id="contacto">
 				</br>

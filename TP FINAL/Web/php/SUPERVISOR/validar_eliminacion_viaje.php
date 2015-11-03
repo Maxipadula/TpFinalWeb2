@@ -5,8 +5,10 @@
 	$id_eliminar_viaj =$_POST ["id_eliminar_viaje"];
 	
 	
-	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-		mysql_select_db ("tpFinal",$conexion) or die ("no db");
+		include ('../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");;
 		
 		 $consulta  = mysql_query ("SELECT id_viaje
 									FROM viaje

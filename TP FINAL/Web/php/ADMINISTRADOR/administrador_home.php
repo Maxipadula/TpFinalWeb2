@@ -2,6 +2,7 @@
 <meta charset="UTF-8">
 
 <?PHP
+	include ("../rutas.php");
 	 session_start();
 	 
 	 
@@ -30,8 +31,8 @@
 			<nav id='divNav'>
 					
 					<a href="./consultar_graficos.php"> CONSULTAR GRAFICOS &nbsp;&nbsp;</a>
-       			    <a href="./GESTION/registrar_datos.php"> GESTIONAR RECURSOS &nbsp;&nbsp;</a>
-            		<a href="../login.php"> SALIR &nbsp;&nbsp;</a>
+       			    <a href="./<?php echo $registrar_datos ?>"> GESTIONAR RECURSOS &nbsp;&nbsp;</a>
+            		<a href="../<?php echo $login ?>"> SALIR &nbsp;&nbsp;</a>
 			</nav>
 
 

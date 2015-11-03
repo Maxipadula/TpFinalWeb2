@@ -6,8 +6,10 @@
 		$num_usuario_mod =$_POST ["numero_usuario_modificar"]or die ;
 		
 		
-		$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-	    mysql_select_db ("tpFinal",$conexion) or die ("no db");
+	include ('../../../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 
 	$consulta_id_doc=mysql_query("SELECT *
 								  FROM tipo_doc
@@ -34,7 +36,7 @@
 			
 			$_SESSION["usuario_a_modificar"] = $fila1["id_usuario"];
 			
-			header('Location: menu_modificacion_usuario.php');
+			header("Location: ./".$menu_modificacion_usuario."");
 			
 		}else header("location:error.php");
 			 

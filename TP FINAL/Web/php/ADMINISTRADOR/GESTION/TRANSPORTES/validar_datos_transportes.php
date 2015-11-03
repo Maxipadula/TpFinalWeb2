@@ -20,8 +20,10 @@
  	 
 	 echo $modelo;
 	  echo $marca;
- 	$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta"); 
- 		mysql_select_db ("tpFinal",$conexion) or die ("no db"); 
+    include ('../../../rutas.php');
+	
+	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
+	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 		
 	$consulta_vehiculo = mysql_query("SELECT V.id_vehiculo ID
 										FROM vehiculo V join
@@ -37,7 +39,7 @@
 	$insert_transportes = mysql_query(" insert into transporte (id_transporte, id_estado, id_vehiculo, num_chasis, num_motor, anio_fabricacion,patente)
 										values	('".$id."', '".$estado."', '".$id_vehiculo."','".$chasis."', '".$motor."','".$fabricacion."','".$patente."')
  										    ;")or die (mysql_error());
-	header('Location: transportes_datos.php');
+	header("Location: ".$transportes_datos."");
  	 ?>
 </body>
  </html> 
