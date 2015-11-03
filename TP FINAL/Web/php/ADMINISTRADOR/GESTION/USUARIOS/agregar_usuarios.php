@@ -83,7 +83,9 @@
 												FROM licencia");
 				
 				?>
+				<option value="nada" selected="selected"></option>
 				<?php
+				
 				while ( $row2 = mysql_fetch_array($consulta_licencia) )
 				{
 					
@@ -103,7 +105,7 @@
 				<div><label>ROL
 					</br>
 					 <select name="rol">    
-
+					 <option value="nada" selected="selected"></option>
 					<?php								
 				$consulta_rol= mysql_query ("SELECT descripcion
 												FROM rol");

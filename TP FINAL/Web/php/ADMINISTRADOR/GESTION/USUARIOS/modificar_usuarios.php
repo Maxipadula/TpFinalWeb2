@@ -11,7 +11,8 @@
 				<div><label>INGRESAR TIPO DE DOCUMENTO:
 					</br>
 					 <select name="tipo_usuario_modificar"> 
-					 <option value="DNI" selected="selected">dni</option>
+					 <option value="nada" selected="selected"></option>
+					 <option value="DNI">dni</option>
                      <option value="Libreta Enrolamiento">Libreta de enrolamiento</option>
                      <option value="Libreta Civica">Libreta civica</option>
                      </select>
