@@ -60,15 +60,16 @@
 			 $modificar_usuario ="modificar_usuarios.php";
 			 $eliminar_usuario ="eliminar_usuarios.php";
 			 $permisos_datos ="permisos_datos.php";
-			 $agregar_permiso="agregar_pemisos.php";
-			 $modificar_permiso ="modificar_permisos.php";
+			 $agregar_permiso="agregar_permisos.php";
+			 $asignar_permiso ="asignar_permisos.php";
 			 $eliminar_permiso ="eliminar_permisos.php";
 			 $validar_usuario ="validar_datos_usuarios.php";
 			 $menu_modificacion_usuario ="menu_modificacion_usuario.php";
 			 $validar_eliminacion_usuario="validar_eliminacion_usuarios.php";
 			 $modificar_usuarios3 ="modificar_usuarios3.php";
 			 $usuario_a_modificar ="usuario_a_modificar.php";
-			 
+			 $validar_agregar_permiso="validar_agregar_permiso.php";
+			 $validar_asignar_permiso ="validar_asignar_permiso.php";
 			 
 			 //gestion de vehiculos
 			  $vehiculos_datos = "VEHICULOS/vehiculos_datos.php";
@@ -84,6 +85,8 @@
 			   $modificar_transportes ="modificar_transportes.php";
 			   $eliminar_transportes ="eliminar_transportes.php";
 			   $validar_datos_transportes ="validar_datos_transportes.php";
+			   $modificar_transportes="modificar_transportes.php";
+			   $validar_modificacion_transportes = "validar_modificacion_transportes.php";
 			   
 			  //gestion de mecanicos
 			   $mecanicos_datos ="MECANICOS/mecanicos_datos.php";
