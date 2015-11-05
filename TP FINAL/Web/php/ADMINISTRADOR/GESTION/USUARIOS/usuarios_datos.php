@@ -1,9 +1,20 @@
-<html>
-	<body>
 
-			<h2>GESTION DE USUARIOS</h2>
-			
+<html>
+<meta charset="UTF-8">
+	<head>
+		<LINK REL="Stylesheet" HREF="../../../../css/login.css" TYPE="text/css">
+	</head>
+	
+<body>
 		  <?php include ("../../../rutas.php"); ?>
+<div id='divHeader'>
+			<h1> Sistema de Gestión Usuarios</h1>
+		</div>
+	<nav id='divNav' >
+		
+       <ul>
+           		
+
 		  
            <a href="./<?php echo  $agregar_usuario ?>">AGREGAR NUEVO USUARIO</a>
 		   <br>
@@ -13,9 +24,14 @@
 		   <br>
 		    <a href="./<?php echo $permisos_datos?>">ADMINISTRAR PERMISOS </a>
 		   <br>
-		   <input type='button' onclick='history.back()' name='volver atrás' value='Volver'></form>
-	</body>
+
+       </ul>
+ 
+	</nav>
+	<div id="divContenedor">
 
 
+		</div>
+</body>
 
 </html>

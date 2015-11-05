@@ -1,5 +1,5 @@
  <html>
-
+	<?php include("vehiculos_datos.php"); ?>
 	<?PHP
 			session_start();
 			

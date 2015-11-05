@@ -1,4 +1,5 @@
  <html>
+ <?php include ("usuarios_datos.php"); ?>
 	<?PHP
 				include ('../../../rutas.php');
 	
@@ -130,7 +131,7 @@
 		
  				<input type="submit" value="Agregar">
 				<input type="reset" value="Borrar Todo">
-				<input type='button' onclick='history.back()' name='volver atrás' value='Volver'></form>
+
  	</form>
 	
 

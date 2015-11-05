@@ -25,18 +25,18 @@
            	    
 	        if ($fila1["codigo_rol"] == 1){
 				 
-				 $permiso="chofer_home";
-				 permisos($clave,$user,$permiso);
+			
 				
+				$_SESSION["id_usuario"] = $fila1['id_usuario'];
 				 $_SESSION["nombre"] = $fila1['nombre'] ;
 				 
-	             header("location:./".$chofer_home."");
+	             header("location:./CHOFER/".$chofer_home."");
 				 
 				 
 			}else if ($fila1["codigo_rol"] == 2){
 				  
-				 $permiso=administrador_home;
-				 permisos();
+			
+				 $_SESSION["id_usuario"] = $fila1['id_usuario'];
 			     $_SESSION["nombre"] = $fila1['nombre'] ;
 				
 				 
@@ -46,8 +46,8 @@
 			
 			}else if($fila1["codigo_rol"] == 3){
 				 
-				 $permiso=supervisor_home;
-				 permisos();
+
+				$_SESSION["id_usuario"] = $fila1['id_usuario'];
 				 $_SESSION["nombre"] = $fila1['nombre'] ;
 				 
 				 
@@ -73,11 +73,7 @@
 	
 		
 		
-		if($fila2["permiso"] != $permiso)
-			 die("NO TIENES PERMISO");
 		
-		 $_SESSION["permiso"] = $fila2['permiso'] ;
-		 $_SESSION["id_usuario"] = $fila2['ID'] ;
 	
 			
 	}

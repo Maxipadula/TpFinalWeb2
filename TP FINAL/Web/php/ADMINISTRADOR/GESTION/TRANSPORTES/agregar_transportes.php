@@ -3,7 +3,7 @@
 	<meta charset="UTF-8">
 </head>
 <body>
-
+<?php include ("transportes_datos.php"); ?>
 	<?PHP		
 			session_start();	
 			include ('../../../rutas.php');

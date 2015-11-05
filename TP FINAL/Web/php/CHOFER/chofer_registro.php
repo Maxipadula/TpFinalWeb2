@@ -4,6 +4,7 @@
 	
 	<body>
 		<?php
+			include ("menu_chofer.php");
 			 session_start();
 			 
 			 $permiso ="chofer_registro";
@@ -37,7 +38,6 @@
 
 		<input type="submit" value="Registrar">
 		<input type="reset" value="Borrar Todo">
-		<input type='button' onclick='history.back()' name='volver atrás' value='Volver'></form>
 		
 		
 	</body>

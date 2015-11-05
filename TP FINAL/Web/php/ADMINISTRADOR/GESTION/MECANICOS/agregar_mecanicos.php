@@ -1,6 +1,9 @@
  <html>
+ <?php include ("mecanicos_datos.php");?>
+ 
 
-	<?PHP		
+	<?PHP	
+	
 				include ('../../../rutas.php');
 	
 	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
@@ -44,7 +47,7 @@
 				<input type ="text" name="empresa" disabled>
 				<br><br>
 				<input type="submit" value="Agregar">
-				<input type="submit" value="Atras" onclick = "location='<?php echo $mecanicos_datos ?>'"/>
+
  		</div>
  	</form>
 	

@@ -28,8 +28,9 @@
 	
 	$insert_vc = mysql_query("insert into vale_combustible(id_vc,id_viaje,  fecha_hora, lugar, costo, cantidad)
 							                    values ('".$id_vc."',1122,'".$fecha_hora."', '".$lugar."','".$costo."', '".$cantidad."');") or die (mysql_error());
+
+		
+		echo "<p>Los datos han sido guardados con exito.</p>" ; 
+
 	
-							
-	
-	header ("location:".$chofer_home."");
 ?>

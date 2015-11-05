@@ -1,4 +1,5 @@
 <html>
+	<?php include("vehiculos_datos.php"); ?>
 	SELECCIONAR EL VEHICULO QUE QUIERAS ELIMINAR
 	<br>
 	<?php

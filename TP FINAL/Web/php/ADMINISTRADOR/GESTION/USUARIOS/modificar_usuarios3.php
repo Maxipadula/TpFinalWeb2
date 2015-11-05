@@ -1,5 +1,6 @@
 	MODIFICAR USUARIO PARTE 3
 	<?php 
+	 <?php include ("usuarios_datos.php"); ?>
 	session_start();
 	
 	$modificar = $_SESSION ["usuario_a_modificar"];

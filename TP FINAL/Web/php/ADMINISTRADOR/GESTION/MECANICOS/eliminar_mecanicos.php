@@ -1,6 +1,6 @@
 <html>
 	SELECCIONAR EL MECANICO QUE QUIERAS ELIMINAR
-	
+ <?php include ("mecanicos_datos.php");?>
 	<?php
 		
 		include ('../../../rutas.php');

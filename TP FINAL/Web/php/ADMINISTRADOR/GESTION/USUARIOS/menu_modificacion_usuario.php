@@ -1,5 +1,5 @@
 <html>
-
+ <?php include ("usuarios_datos.php"); ?>
 	<h2>MODIFICAR USUARIOS</H2>
 		Que dato desea modificar? <br>
 

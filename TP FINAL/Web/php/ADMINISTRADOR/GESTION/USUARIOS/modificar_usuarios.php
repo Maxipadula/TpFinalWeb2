@@ -1,4 +1,5 @@
 <html>
+ <?php include ("usuarios_datos.php"); ?>
  <?php 	include ('../../../rutas.php');?>
 	SELECCIONAR USUARIO A MODIFICAR
 	<br>

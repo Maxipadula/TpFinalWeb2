@@ -10,7 +10,7 @@
 			include ("../rutas.php");
 	
 							
-	        if ( isset ($_SESSION["id_usuario"])){
+	        if ( isset ($_SESSION["nombre"])){
 		
 	          $nombre = $_SESSION["nombre"];
 	   
@@ -23,16 +23,7 @@
 	        }
         ?> 
 	
-	<nav>
-		
-       <ul>
-           <li><a href="./<?php echo $registrar_vc?>">REGISTRAR VALE DE COMBUSTIBLE</a></li>
-           <li><a href="./<?php echo $chofer_registro_viaje?>">CREAR REGISTRO DE VIAJE</a></li>
-           <li><a href="../<?php echo $login?>">SALIR</a></li>  
-
-       </ul>
- 
-	</nav>
+	<?php include ("menu_chofer.php");?>
 				
 				
 		

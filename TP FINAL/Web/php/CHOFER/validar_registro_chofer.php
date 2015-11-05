@@ -47,7 +47,7 @@
 	
 							
 		
-	
+	echo "Registro exitos";
 	/*if($update_viaje_km_recorridos == true)
 			  header("location:./".$chofer_home."");
 	*/

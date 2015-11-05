@@ -1,4 +1,5 @@
  <html>
+ <?php include ("permisos_datos.php"); ?>
 	<?PHP
 		session_start();
 		

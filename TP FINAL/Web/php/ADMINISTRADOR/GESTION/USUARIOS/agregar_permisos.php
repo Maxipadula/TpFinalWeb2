@@ -1,5 +1,6 @@
  <html>
 <meta charset="UTF-8">
+<?php include ("permisos_datos.php"); ?>
 	<?PHP
 		session_start();
 		
