@@ -70,6 +70,7 @@
 			 $usuario_a_modificar ="usuario_a_modificar.php";
 			 $validar_agregar_permiso="validar_agregar_permiso.php";
 			 $validar_asignar_permiso ="validar_asignar_permiso.php";
+			 $eliminar_permiso="eliminar_permiso.php";
 			 
 			 //gestion de vehiculos
 			  $vehiculos_datos = "VEHICULOS/vehiculos_datos.php";

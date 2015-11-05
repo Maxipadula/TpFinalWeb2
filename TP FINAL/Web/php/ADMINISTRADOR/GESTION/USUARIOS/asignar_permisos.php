@@ -1,5 +1,4 @@
  <html>
-<meta charset="UTF-8">
 	<?PHP
 		session_start();
 		
@@ -15,7 +14,6 @@
 			<div><label>SELECCIONE ROL
 					</br>
 					 <select name="rol">    
-					 <option value="nada" selected="selected"></option>
 					<?php								
 				$consulta_rol= mysql_query ("SELECT descripcion
 												FROM rol");
@@ -26,35 +24,36 @@
 				{
 					
 				?>				
-				  <option value=" <?php echo $row2["descripcion"] ?> " >
+				  <option value="<?php echo $row2["descripcion"] ?>" >
 				  <?php echo $row2["descripcion"]; ?>
 				  </option>
 			    <?php
 				}
-				?></select>
+				?>
+				</select>
  					</label>
  				</div>	
 				
 			<div><label>SELECCIONE PERMISO
 					</br>
 					 <select name="permiso">    
-					 <option value="nada" selected="selected"></option>
 					<?php								
-				$consulta_permiso= mysql_query ("SELECT descripcion
+				$consulta_perm= mysql_query ("SELECT descripcion
 												FROM permiso");
 				
 				?>
 				<?php
-				while ( $row3 = mysql_fetch_array($consulta_permiso) )
+				while ( $row3 = mysql_fetch_array($consulta_perm) )
 				{
 					
 				?>				
-				  <option value=" <?php echo $row3['descripcion'] ?> " >
-				  <?php echo $row3['descripcion']; ?>
+				  <option value="<?php echo $row3["descripcion"] ?>" >
+				  <?php echo $row3["descripcion"]; ?>
 				  </option>
 			    <?php
 				}
-				?></select>
+				?>
+				</select>
  					</label>
  				</div>
 				

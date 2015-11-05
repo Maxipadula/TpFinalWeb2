@@ -1,42 +1,33 @@
-<html>
+
 <?php
 
 	session_start();
 	
 	$permiso = $_POST["permiso"];
 	$rol = $_POST["rol"];
-	
-		
-						
-	
+
 	include ('../../../rutas.php');
-	echo $rol;
+	
 	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
 	mysql_select_db ("tpFinal",$conexion) or die ("no db");
-	
-	$consultar_rol = mysql_query("SELECT *
-								  FROM rol
-								  WHERE descripcion = '".$rol."'")or die (mysql_error());
-								  
-	$fila = mysql_fetch_assoc($consultar_rol) or die ("cuac");
-	
-	$id_rol = $fila["codigo_rol"];
-	
 
-	$consultar_permiso= mysql_query("SELECT id_permiso ID
-								  FROM permiso
-								  WHERE descripcion='".$permiso."'")or die (mysql_error());
-								  
-	$fila2=mysql_fetch_assoc($consultar_permiso)or die ("cuac2");
+	$consulta1 = mysql_query(" select codigo_rol codigo
+								from rol
+								where descripcion = '".$rol."'") or die (mysql_error());
 	
-	$id_permiso = $fila2["ID"];
+	$fila1 = mysql_fetch_assoc($consulta1) or die ("cuac");
 	
+	$consulta2 = mysql_query(" select id_permiso id
+								from permiso
+								where descripcion = '".$permiso."'") or die (mysql_error());
+								
 	
-/*$asignar_permiso =mysql_query("insert into dar_permiso(id_permiso,codigo_rol)
-														values('".$id_permiso."',1);") or die (mysql_error());*/
+	$fila2 = mysql_fetch_assoc($consulta2) or die ("cuac");
 	
-				
-	/*header("location: ".$permisos_datos."");*/
+	$cod_rol = $fila1["codigo"];
+	$id_permiso = $fila2["id"];
+	
+	$insertar_permiso = mysql_query ("insert into dar_permiso(id_permiso,codigo_rol)
+											values('".$id_permiso."','".$cod_rol."');") or die (mysql_error());
 ?>
 
-</html>

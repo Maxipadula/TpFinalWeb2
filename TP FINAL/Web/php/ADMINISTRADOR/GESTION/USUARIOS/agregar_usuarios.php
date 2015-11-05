@@ -1,5 +1,4 @@
  <html>
-<meta charset="UTF-8">
 	<?PHP
 				include ('../../../rutas.php');
 	
@@ -76,22 +75,20 @@
 				
 
 				<div><label>TIPO DE LICENCIA
- 					 </br>
-					 <select name="licencia">
+ 					</br>
+					 <select name="id_lic">    
 					<?php								
-				$consulta_licencia = mysql_query ("SELECT id_licencia ID
+				$consulta_lic= mysql_query ("SELECT id_licencia
 												FROM licencia");
 				
 				?>
-				<option value="nada" selected="selected"></option>
 				<?php
-				
-				while ( $row2 = mysql_fetch_array($consulta_licencia) )
+				while ( $row = mysql_fetch_array($consulta_lic) )
 				{
 					
 				?>				
-				  <option value=" <?php echo $row2['ID'] ?> " >
-				  <?php echo $row2['ID']; ?>
+				  <option value="<?php echo $row["id_licencia"] ?>" >
+				  <?php echo $row["id_licencia"]; ?>
 				  </option>
 			    <?php
 				}
@@ -105,7 +102,6 @@
 				<div><label>ROL
 					</br>
 					 <select name="rol">    
-					 <option value="nada" selected="selected"></option>
 					<?php								
 				$consulta_rol= mysql_query ("SELECT descripcion
 												FROM rol");
@@ -116,8 +112,8 @@
 				{
 					
 				?>				
-				  <option value=" <?php echo $row2['descripcion'] ?> " >
-				  <?php echo $row2['descripcion']; ?>
+				  <option value="<?php echo $row2["descripcion"] ?>" >
+				  <?php echo $row2["descripcion"]; ?>
 				  </option>
 			    <?php
 				}
