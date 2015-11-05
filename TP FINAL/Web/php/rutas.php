@@ -13,7 +13,7 @@
 	
 	
 	//chofer
-	$chofer_home = "CHOFER/chofer_home.php";
+	$chofer_home = "chofer_home.php";
 		
 		//vales de combustible
 		$registrar_vc="registrar_vc.php";

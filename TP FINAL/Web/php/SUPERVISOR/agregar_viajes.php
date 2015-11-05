@@ -32,7 +32,8 @@
 				mysql_select_db ("tpFinal",$conexion) or die ("no db");
 		
 				$consulta  = mysql_query ("SELECT id_usuario, nombre
-										  FROM usuario") or die ("no q");
+										  FROM usuario
+										  where codigo_rol = 1") or die ("no q");
 			
 				if ($row = mysql_fetch_array($consulta)){
 				echo "<table border = '1'> \n";

@@ -38,7 +38,8 @@
  				<div><label>ESTADO DEL VEHICULO
  					</br>
 					 <select name="estado_transporte"> 
-					 <option value="mm" selected="selected">Muy Malo</option>
+					 <option value="nada" selected="selected"></option>
+					 <option value="mm">Muy Malo</option>
                      <option value="m">Malo</option>
                      <option value="r">Regular</option>
 					 <option value="b">Bueno</option>
@@ -50,6 +51,7 @@
 				
 				<div><label>MARCA
 				 <select name="marca_transporte"> 
+				 <option value="nada" selected="selected"></option>
 				<?php
 				
 				$consulta_marca = mysql_query ("SELECT *
@@ -77,6 +79,7 @@
 						
 				<div><label>MODELO
 				 <select name="modelo_transporte"> 
+				 <option value="nada" selected="selected"></option>
 				<?php								
 				$consulta_modelo = mysql_query ("SELECT descripcion,id_modelo ID
 												FROM modelo");
@@ -127,6 +130,13 @@
  				</div>
  				</br>
 				
+				<div><label>KM RECORRIDOS
+ 					</br>
+ 					<input type="text" name="patente">
+ 				</label>
+ 				</div>
+ 				</br>
+							
 				<input type="submit" value="Seguir">
 				<input type="reset" value="Borrar Todo">
 				<input type='button' onclick='history.back()' name='volver atrás' value='Volver'></form>

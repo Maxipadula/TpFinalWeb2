@@ -14,26 +14,41 @@
                               FROM viaje 
                               WHERE id_usuario = '".$id_usuario."' ");
                               
-
+	
 							
 							$fila1 = mysql_fetch_assoc($consulta1)or die ;
 							
 							$id_viaje = $fila1["viaje"];
-							
 	
-
-	
-	$update_viaje_fecha = mysql_query("UPDATE viaje
-								       SET fecha_fin = '".$fecha_hora."'
-									   where id_viaje = '".$id_viaje."'");
+	$update_viaje_km_recorridos = mysql_query("UPDATE viaje
+												SET fecha_fin = '".$fecha_hora."',
+													km_recorridos = '".$km_recorridos."'
+												where id_viaje = '".$id_viaje."'");
 									   
+	
+	$total_km_recorridos = mysql_query ("select V.km_recorridos viaje_km, T.km_recorridos trans_km, V.id_transporte trans
+										 from viaje V inner join 
+											  transporte T on V.id_transporte = T.id_transporte
+											  where V.id_viaje = '".$id_viaje."'");
+											  
+	$fila1 = mysql_fetch_assoc($total_km_recorridos)or die ;
+	
+	$total = $fila1 ["viaje_km"] + $fila1 ["trans_km"];
+	
+	echo $total;
+	
+	$id_trasnporte = $fila1["trans"];
+	
+	$modificacion_km = mysql_query("update transporte
+									set km_recorridos = '".$total."'
+									where id_transporte = '".$id_trasnporte."' ");
 	
 	
 	
 							
 		
 	
-	if($update_viaje_fecha == true)
+	/*if($update_viaje_km_recorridos == true)
 			  header("location:./".$chofer_home."");
-	
+	*/
 ?>

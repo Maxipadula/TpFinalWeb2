@@ -42,10 +42,15 @@
 				
 				</br>
 				<div><label>FECHA Y HORA DE LLEGADA
-					<input type="datetime" name="fecha_hora_vc">
+					<input type="datetime" name="fecha_hora_viaje">
 					</label>
 				</div>
+				</br>
 				
+				<div><label>KILOMETROS RECORRIDOS
+					<input type="datetime" name="km_recorridos_viaje" size="5">
+					</label>
+				</div>
 				</br>
 				
 

@@ -26,6 +26,7 @@
  				</label>
  				</div>	
  				</br>
+				
 	<div><label>NOMBRE DEL PERMISO QUE DESEA AGREGAR:
 			</br>
  					<input type="text" name="permiso">
@@ -34,6 +35,6 @@
  				</br>
 		
  				<input type="submit" value="Agregar">
-				<input type='button' onclick='history.back()' name='volver atrás' value='Volver'></form>
+				<input type='button' onclick='history.back()' name='volver atrás' value='Volver'>
  	</form>
 </html>

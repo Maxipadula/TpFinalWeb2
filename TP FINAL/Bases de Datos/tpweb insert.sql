@@ -75,8 +75,8 @@ values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 
 					FROM usuario U inner join
 								  tipo_doc TD on U.id_tipo_doc = TD.id_tipo_doc
 								  WHERE TD.id_tipo_doc = 1 AND  num_doc=302584789;   */
-select *
-from usuario;
+/*select *
+from usuario;*/
 
 insert into modelo (id_modelo, descripcion)
 values	(100, 'HD 78'),
@@ -116,14 +116,14 @@ values  (123, 100, 1,5225.00),
 									modelo IM on U.id_modelo = IM.id_modelo inner join 
 									marca MA on U.id_marca = MA.id_marca;*/
                                     
-	SELECT id_vehiculo ID
+/*	SELECT id_vehiculo ID
 										FROM vehiculo V join
 										     modelo MO on V.id_modelo = MO.id_modelo join
 											 marca MA on V.id_marca = MA.id_marca
 										WHERE MO.descripcion = 'HD 78' and MA.descripcion = 'Hyundai';
-
-select * 
-from vehiculo;
+*/
+/*select * 
+from vehiculo;*/
 
 /*insert into vehiculo (id_vehiculo, id_modelo, id_marca , capacidad_carga) 
  									values (800,100,4,4521);*/
@@ -170,8 +170,8 @@ values	(1122, 10, 2222, 'Buenos Aires', 10000, 'Florianopolis', 'Pedromania', '2
 		(5566, 30, 3333, 'Misiones', 4000, 'Montevideo','sisis', '2015-12-12 12:30:34', '2015-12-12 16:30:00','medias'),
 		(6677, 50, 4444, 'Mendoza',  8500, 'Asuncion','nadanada', '2015-07-06 12:00:20', '2015-07-06 20:40:29','buzos');
 
-select *
-from viaje;
+/*select *
+from viaje;*/
 
 insert into vale_combustible(id_vc,id_viaje,  fecha_hora, lugar, costo, cantidad)
 values (1,1122,'2015-06-05 15:11:25', 'Entre Rios', 5000.00, 250.00),   
@@ -226,8 +226,8 @@ values	(001, 'Yanet Rodriguez'),
 		(005, 'Ivan Lomba'),
 		(006, 'Lucrecio Lunch');
         
-select * 
-from mecanico;     
+/*select * 
+from mecanico;*/     
         
 insert into reparacion (codigo_reparacion, id_mecanico, id_transporte,id_orden, costo, fecha)
 values	(123, 006, 5555,1, 15000, '2015-08-06'),
@@ -243,8 +243,8 @@ values	(123, 006, 5555,1, 15000, '2015-08-06'),
 /*select * 
 from reparacion;*/        
         
-SELECT * 
+/*SELECT * 
 						FROM usuario u join 
 							     rol r on u.codigo_rol = r.codigo_rol join
 								 permiso p on r.codigo_rol = p.codigo_rol
-	                        WHERE  id_usuario= 30 and p.descripcion = 'chofer_home'
+	                        WHERE  id_usuario= 30 and p.descripcion = 'chofer_home'*/

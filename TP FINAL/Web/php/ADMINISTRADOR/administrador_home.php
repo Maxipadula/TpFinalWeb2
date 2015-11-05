@@ -24,6 +24,7 @@
 	</head>
 	
 	<body>
+	
 		<div id='divHeader'>
 			<h1> Sistema de Gestión Logistica</h1>
 		</div>
