@@ -6,7 +6,7 @@ body {
 	font-family: 'Ubuntu', sans-serif;
 	}
 
-#contacto{
+#login{
 	text-align: center;
 }
 
@@ -47,11 +47,24 @@ a:hover
 }
 
 /*   Boton    */
+
 .boton{
         color:white;
         background:#607D8B;
         border:0px;
-        width:80px;
+        width:100px;
         height:30px;
         font-family: 'Ubuntu', sans-serif;
        }
+
+/* ERRORES JS*/
+
+.errores{
+    text-align: center;
+    width:200px;
+    height: 20px;
+    color: #F44336;
+    display: none;
+    margin: 0 auto;
+    font-size: 12px;
+}
