@@ -97,6 +97,11 @@
 			   $validar_datos_mecanicos ="validar_datos_mecanicos.php";
 			   $validar_eliminacion_mecanico ="validar_eliminacion_mecanico.php";
 			   
+			   
+			   //graficos
+			   $graficos = "GRAFICOS";
+			   $graficos_datos = "graficos_datos.php";
+			   
 				
 	
 	

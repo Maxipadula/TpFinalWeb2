@@ -19,14 +19,15 @@
 		  
        		<?php include ("../../rutas.php");?>
 		  
-           <a href="./<?php echo $usuarios_datos ?>">USUARIOS</a>
-		   <br>
-           <a href="./<?php echo $vehiculos_datos ?>">VEHICULOS</a>
-		   <br>
-           <a href="./<?php echo $transportes_datos ?>">TRANSPORTES</a>
-		   <br>
-           <a href="./<?php echo $mecanicos_datos ?>">MECANICOS</a>
-		   <br>
+            <li><a href="./<?php echo $usuarios_datos ?>">USUARIOS</a> </li>
+
+            <li><a href="./<?php echo $vehiculos_datos ?>">VEHICULOS</a> </li>
+
+            <li><a href="./<?php echo $transportes_datos ?>">TRANSPORTES</a> </li>
+
+            <li><a href="./<?php echo $mecanicos_datos ?>">MECANICOS</a> </li>
+			 <li><a href="../<?php echo $administrador_home2?>">SALIR</a></li>
+
 
        </ul>
  

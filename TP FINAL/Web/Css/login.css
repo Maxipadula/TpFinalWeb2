@@ -2,9 +2,20 @@
 
 body {
 	background-color: #FFFFFF;
-	margin:0 0 0 0;
+	  width: 99%;
+    margin: 0 auto;
+
 	font-family: 'Ubuntu', sans-serif;
 	}
+ul{
+	 overflow: hidden;
+	
+}	
+
+ul li {
+  float: left;
+  width: 20%;
+}
 
 #login{
 	text-align: center;
@@ -28,6 +39,7 @@ body {
 	margin-left: 200px;
 	margin-right: 200px;
 }
+
 
 /* Color Hipervinculos*/
 a{

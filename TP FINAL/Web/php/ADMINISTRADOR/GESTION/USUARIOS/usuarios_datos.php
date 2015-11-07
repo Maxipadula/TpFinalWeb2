@@ -16,14 +16,16 @@
            		
 
 		  
-           <a href="./<?php echo  $agregar_usuario ?>">AGREGAR NUEVO USUARIO</a>
-		   <br>
-		   <a href="./<?php echo  $modificar_usuario?>">MODIFICAR USUARIO EXISTENTE</a>
-		   <br>
-		   <a href="./<?php echo $eliminar_usuario?>">ELIMINAR UN USUARIO </a>
-		   <br>
-		    <a href="./<?php echo $permisos_datos?>">ADMINISTRAR PERMISOS </a>
-		   <br>
+           <li><a href="./<?php echo  $agregar_usuario ?>">AGREGAR NUEVO USUARIO</a></li>
+		  
+		   <li><a href="./<?php echo  $modificar_usuario?>">MODIFICAR USUARIO EXISTENTE</a></li>
+		 
+		  <li> <a href="./<?php echo $eliminar_usuario?>">ELIMINAR UN USUARIO </a></li>
+		
+		   <li> <a href="./<?php echo $permisos_datos?>">ADMINISTRAR PERMISOS </a></li>
+		   
+		   <li><a href="../../<?php echo $registrar_datos?>">SALIR</a></li>
+		
 
        </ul>
  

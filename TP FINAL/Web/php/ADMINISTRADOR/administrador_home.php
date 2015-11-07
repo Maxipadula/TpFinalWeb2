@@ -34,9 +34,9 @@
        <ul>
            		
 
-		 	<a href="./consultar_graficos.php"> CONSULTAR GRAFICOS &nbsp;&nbsp;</a>
-       			    <a href="./<?php echo $registrar_datos ?>"> GESTIONAR RECURSOS &nbsp;&nbsp;</a>
-            		<a href="../<?php echo $login ?>"> SALIR &nbsp;&nbsp;</a>
+		 	<li><a href="./<?php echo $graficos ?>/<?php echo $graficos_datos?>"> CONSULTAR GRAFICOS &nbsp;&nbsp;</a></li>
+       			   <li> <a href="./<?php echo $registrar_datos ?>"> GESTIONAR RECURSOS &nbsp;&nbsp;</a></li>
+            		<li><a href="../<?php echo $login ?>"> SALIR &nbsp;&nbsp;</a></li>
 		   <br>
 
        </ul>

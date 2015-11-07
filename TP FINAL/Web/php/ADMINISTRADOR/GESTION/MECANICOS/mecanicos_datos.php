@@ -11,12 +11,13 @@
 		
        <ul>
             
-           <a href="./<?php echo $agregar_mecanico?>">AGREGAR</a>
-		   <br>
-		   <a href="./<?php echo $modificar_mecanico?>">MODIFICAR</a>
-		   <br>
-		   <a href="./<?php echo $eliminar_mecanico?>">ELIMINAR</a>
-		   <br> 
+           <li><<a href="./<?php echo $agregar_mecanico?>">AGREGAR</a></li>
+	
+		   <li><<a href="./<?php echo $modificar_mecanico?>">MODIFICAR</a></li>
+
+		  <li>< <a href="./<?php echo $eliminar_mecanico?>">ELIMINAR</a></li>
+		   
+		   <li><a href="./<?php echo $registrar_datos?>">SALIR</a></li>
 
        </ul>
  

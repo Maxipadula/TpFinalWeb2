@@ -17,14 +17,16 @@
 
 		  
           <?php include ("../../../rutas.php"); ?>
-           <a href="./<?php echo $agregar_vehiculos ?>">AGREGAR</a>
-		   <br>
+           <li><a href="./<?php echo $agregar_vehiculos ?>">AGREGAR</a></li>
+	
 		  <!--- <a href="./modificar_vehiculos.php">MODIFICAR</a>
 		   <br> --->
-		   <a href="./<?php echo $eliminar_vehiculos ?>">ELIMINAR</a>
-		   <br>
-		   <input type='button' onclick='history.back()' name='volver atrás' value='Volver'></form>
-		   <br>
+		  <li> <a href="./<?php echo $eliminar_vehiculos ?>">ELIMINAR</a></li>
+		  
+		  <li><a href="./<?php echo $registrar_datos?>">SALIR</a></li>
+
+
+		
 
        </ul>
  
