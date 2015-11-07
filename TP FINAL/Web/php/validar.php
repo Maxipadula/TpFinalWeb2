@@ -61,20 +61,4 @@
 	}else header("location:error.php");
 	
 
-	
-	function permisos ($clave, $user, $permiso){
-		
-		$consulta2 = mysql_query("	SELECT r.descripcion descripcion, p.descripcion permiso, u.id_usuario ID
-						FROM usuario u join 
-							     rol r on u.codigo_rol = r.codigo_rol join
-								 permiso p on r.codigo_rol = p.codigo_rol
-	                        WHERE pass ='".$clave."' and  usuario= '".$user."' and p.descripcion = '".$permiso."'")	;
-		$fila2 = mysql_fetch_assoc($consulta2);
-	
-		
-		
-		
-	
-			
-	}
 ?>

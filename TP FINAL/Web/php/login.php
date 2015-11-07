@@ -30,7 +30,7 @@
 
 				<div>
 					<label for="pass">PASSWORD</label></br>
-					<input name="pass" type="password" id="pass" class="pass" placeholder="Ingrese contraseña"/ >
+					<input name="clave" type="password" id="pass" class="pass" placeholder="Ingrese contraseña"/ >
 					<div id="mensaje2" class="errores"> Ingrese contraseña</div>
 				</div>
 
