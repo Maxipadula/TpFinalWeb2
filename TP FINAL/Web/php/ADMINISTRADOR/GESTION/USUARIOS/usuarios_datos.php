@@ -6,10 +6,12 @@
 	</head>
 	
 <body>
-		  <?php include ("../../../rutas.php"); ?>
-<div id='divHeader'>
-			<h1> Sistema de Gestión Usuarios</h1>
+		<?php include ("../../../rutas.php"); ?>
+		
+		<div id='divHeader'>
+			<h1> Sistema de Gestión de Usuarios</h1>
 		</div>
+		
 	<nav id='divNav' >
 		
        <ul>
@@ -30,10 +32,7 @@
        </ul>
  
 	</nav>
-	<div id="divContenedor">
 
-
-		</div>
 </body>
 
 </html>

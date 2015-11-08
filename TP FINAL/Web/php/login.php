@@ -36,7 +36,7 @@
 
 					</br>
 
-				<input name="submit" type="submit" id="boton" value="Registrar" class="boton"/>
+				<input name="submit" type="submit" id="boton" value="Ingresar" class="boton"/>
 			
 		</form>
 	</body>
