@@ -1,6 +1,7 @@
 <html>
-	<?PHP
+
 	 <?php include ("usuarios_datos.php"); ?>
+     <?PHP
 	session_start() ;
 	
 	$tipo_usu_eliminar =$_POST ["tipo_usuario_eliminar"];

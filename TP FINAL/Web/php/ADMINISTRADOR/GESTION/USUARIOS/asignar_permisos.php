@@ -15,7 +15,8 @@
 			<div><label>SELECCIONE ROL
 					</br>
 					 <select name="rol">    
-					<?php								
+				  	<option value='nada' selected='selected'></option>
+					<?php		
 				$consulta_rol= mysql_query ("SELECT descripcion
 												FROM rol");
 				
@@ -38,6 +39,7 @@
 			<div><label>SELECCIONE PERMISO
 					</br>
 					 <select name="permiso">    
+				  	<option value='nada' selected='selected'></option>
 					<?php								
 				$consulta_perm= mysql_query ("SELECT descripcion
 												FROM permiso");

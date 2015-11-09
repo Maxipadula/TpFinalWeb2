@@ -2,8 +2,8 @@
 	<head>
 		<?PHP
 			$motor = 150;
-			$llanta = 60000;
-			$rueda = 30000;
+			$llanta = 4000;
+			$rueda = 2000;
 			$tapa_cilindro = 190000;
 			$amortiguadores = 10000;
 			$volante = 250000;
@@ -26,13 +26,13 @@
 			
 			control ($motor,$motor_n);
 			control($llanta,$llanta_n);
-			control ($rueda,$rueda_n);
+			/*control ($rueda,$rueda_n);
 			control($tapa_cilindro,$tapa_cilindro_n);
 			control ($amortiguadores,$amortiguadores_n);
 			control($volante,$volante_n);
 			control ($paragolpes,$paragolpes_n);
 			control($guardabarros,$guardabarros_n);
-			
+			*/
 			function control ($x,$b){
 			
 				$control= mysql_query(" SELECT id_transporte trans
@@ -40,18 +40,20 @@
 										where km_recorridos > '".$x."'") or die ("no query");
 										
 				$fila = mysql_fetch_assoc($control);
-								
-					echo "El vehiculo '".$fila ['trans']."' ha superado los '".$x."' kilometros, necesita un cambio de '".$b."'<br>";
-									
 				
-	
-                             
+				$filasafectadas1 = mysql_num_rows($control);
+				
+				echo $fila ['trans'];
+					
+				
+				//for ($i=0;$i<$filasafectadas1;$i++){
+				
+				//	echo "El vehiculo '".$fila ['trans']."' ha superado los '".$x."' kilometros, necesita un cambio de '".$b."'<br>";
+				//}
 			}
 		
-		
 		?>
-	
-
+		
 	</head>
 	
 	<body>

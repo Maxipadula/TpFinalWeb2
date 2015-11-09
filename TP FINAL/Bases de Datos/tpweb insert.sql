@@ -57,8 +57,8 @@ insert into permiso(id_permiso, codigo_rol, descripcion)
 		  (2,2,'administrador_home'),
 		  (3,3,'supervisor_home');
           
-/*select * 
-from permiso;*/
+select * 
+from permiso;
           
 insert into usuario (id_usuario, usuario, nombre, pass, fecha_nacimiento, id_tipo_doc, num_doc, id_licencia, codigo_rol)
 values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 'NO',3),
@@ -75,8 +75,8 @@ values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 
 					FROM usuario U inner join
 								  tipo_doc TD on U.id_tipo_doc = TD.id_tipo_doc
 								  WHERE TD.id_tipo_doc = 1 AND  num_doc=302584789;   */
-/*select *
-from usuario;*/
+select *
+from usuario;
 
 insert into modelo (id_modelo, descripcion)
 values	(100, 'HD 78'),
@@ -122,23 +122,26 @@ values  (123, 100, 1,5225.00),
 											 marca MA on V.id_marca = MA.id_marca
 										WHERE MO.descripcion = 'HD 78' and MA.descripcion = 'Hyundai';
 */
-/*select * 
-from vehiculo;*/
+select * 
+from vehiculo;
 
 /*insert into vehiculo (id_vehiculo, id_modelo, id_marca , capacidad_carga) 
  									values (800,100,4,4521);*/
 
-insert into transporte (id_transporte, id_estado, id_vehiculo, num_chasis, num_motor, anio_fabricacion,patente)
-values	(1111, 'b', 123, 236589, 147852, 2005,'fkn 106'),
-        (2222, 'mb', 123, 963258, 852147, 2013,'fmj 750'),
-        (3333, 'mb', 123, 789456, 321987, 2014,'hgp 650'),
-        (4444, 'r', 456, 159753, 258456, 2007,'dlo 890'),
-        (5555, 'b', 456, 951357, 448866, 2011,'dgf 789'),
-		(6666, 'm', 789, 358692, 69852, 2015,'fen 404'),
-        (7777, 'mb',147, 134679, 976431, 2013,'oki 435'),
-        (8888, 'r',789, 1357913, 791357, 2014,'dma 124');
-        
-
+insert into transporte (id_transporte, id_estado, id_vehiculo, num_chasis, num_motor, anio_fabricacion,patente,km_recorridos)
+values	(1111, 'b', 123, 236589, 147852, 2005,'fkn 106',1200),
+        (2222, 'mb', 123, 963258, 852147, 2013,'fmj 750',5000),
+        (3333, 'mb', 123, 789456, 321987, 2014,'hgp 650',17000),
+        (4444, 'r', 456, 159753, 258456, 2007,'dlo 890',14700),
+        (5555, 'b', 456, 951357, 448866, 2011,'dgf 789',15482),
+		(6666, 'm', 789, 358692, 69852, 2015,'fen 404',1260),
+        (7777, 'mb',147, 134679, 976431, 2013,'oki 435',18000),
+        (8888, 'r',789, 1357913, 791357, 2014,'dma 124',14326);
+ 
+ 
+SELECT id_transporte trans
+										FROM transporte
+										where km_recorridos > 150;
  
 /*SELECT T.id_transporte, E.descripcion Estado, M.descripcion Marca, MO.descripcion Modelo, num_chasis NroChasis, num_motor, año_fabricacion, patente
 										  FROM transporte T inner join 
@@ -147,8 +150,8 @@ values	(1111, 'b', 123, 236589, 147852, 2005,'fkn 106'),
 											   marca M on V.id_marca = M.id_marca inner join 
 											   modelo MO on V.id_modelo = MO.id_modelo;*/      
         
-/*select *
-from transporte;*/
+select *
+from transporte;
 
 insert into acoplado (id_acoplado, descripcion)
 values	(101, 'acoplado1'),
@@ -170,8 +173,8 @@ values	(1122, 10, 2222, 'Buenos Aires', 10000, 'Florianopolis', 'Pedromania', '2
 		(5566, 30, 3333, 'Misiones', 4000, 'Montevideo','sisis', '2015-12-12 12:30:34', '2015-12-12 16:30:00','medias'),
 		(6677, 50, 4444, 'Mendoza',  8500, 'Asuncion','nadanada', '2015-07-06 12:00:20', '2015-07-06 20:40:29','buzos');
 
-/*select *
-from viaje;*/
+select *
+from viaje;
 
 insert into vale_combustible(id_vc,id_viaje,  fecha_hora, lugar, costo, cantidad)
 values (1,1122,'2015-06-05 15:11:25', 'Entre Rios', 5000.00, 250.00),   
@@ -179,8 +182,8 @@ values (1,1122,'2015-06-05 15:11:25', 'Entre Rios', 5000.00, 250.00),
 	   (3,3344,'2015-10-11 07:16:45', 'Mendoza', 2600.00, 200.00),
 	   (4,6677,'2015-07-06 15:30:14', 'Buenos Aires', 2250.00, 150.00);
       
-/*select *
-from vale_combustible;*/
+select *
+from vale_combustible;
  
 insert into lleva(id_acoplado,id_transporte,id_viaje)
 values(101,2222,1122),   
@@ -226,8 +229,8 @@ values	(001, 'Yanet Rodriguez'),
 		(005, 'Ivan Lomba'),
 		(006, 'Lucrecio Lunch');
         
-/*select * 
-from mecanico;*/     
+select * 
+from mecanico;    
         
 insert into reparacion (codigo_reparacion, id_mecanico, id_transporte,id_orden, costo, fecha)
 values	(123, 006, 5555,1, 15000, '2015-08-06'),
@@ -241,7 +244,7 @@ values	(123, 006, 5555,1, 15000, '2015-08-06'),
 		(131, 003, 6666,9, 2500,'2015-06-26');
         
 /*select * 
-from reparacion;*/        
+from reparacion;*/       
         
 /*SELECT * 
 						FROM usuario u join 

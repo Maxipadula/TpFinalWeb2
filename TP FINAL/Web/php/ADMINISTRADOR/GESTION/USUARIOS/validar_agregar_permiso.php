@@ -1,6 +1,6 @@
-<?php
-<?php include ("permisos_datos.php"); ?>
 
+<?php include ("permisos_datos.php"); ?>
+<?php
 	session_start();
 	
 	$permiso = $_POST["permiso"];

@@ -68,7 +68,7 @@
        
   
  	$insert_vehiculo = mysql_query("insert into vehiculo (id_vehiculo, id_modelo, id_marca , capacidad_carga) 
- 									values ('".$id_vehi."','".$model_id."','".$id_mar."','".$cap_carga."')  
+ 									values ('".$id_vehi."','".$model."','".$id_mar."','".$cap_carga."')  
  										    ;")or die (mysql_error()); 
  											 
 	header("Location: ".$vehiculos_datos."");

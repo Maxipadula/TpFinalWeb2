@@ -83,6 +83,7 @@
 												FROM licencia");
 				
 				?>
+				 <option value="nada" selected="selected"></option>
 				<?php
 				while ( $row = mysql_fetch_array($consulta_lic) )
 				{
@@ -108,6 +109,7 @@
 												FROM rol");
 				
 				?>
+				 <option value="nada" selected="selected"></option>
 				<?php
 				while ( $row2 = mysql_fetch_array($consulta_rol) )
 				{

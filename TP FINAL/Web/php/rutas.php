@@ -71,6 +71,7 @@
 			 $validar_agregar_permiso="validar_agregar_permiso.php";
 			 $validar_asignar_permiso ="validar_asignar_permiso.php";
 			 $eliminar_permiso="eliminar_permiso.php";
+			 $ingresar_modificaciones_usuario="ingresar_modificaciones_usuario";
 			 
 			 //gestion de vehiculos
 			  $vehiculos_datos = "VEHICULOS/vehiculos_datos.php";
