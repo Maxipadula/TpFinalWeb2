@@ -13,7 +13,7 @@
 	
 	<body>
 		
-		<div id='divHeader'>
+		<div id='divHeaderLogin'>
 			<h1> Sistema de Gestión Logistica</h1>
 		</div>
 		

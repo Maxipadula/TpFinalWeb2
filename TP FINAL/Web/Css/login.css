@@ -27,7 +27,7 @@ ul li {
 
 #divHeader{
 	height: 100px;
-	background-color: #607D8B;
+	background-color: #00BCD4;
 	text-align: center;
 	padding-top: 25px;
 	color: #FFFFFF;
@@ -35,7 +35,7 @@ ul li {
 
 #divNav{
 	text-align: center;
-	background-color: #455A64;
+	background-color: #0097A7;
 	color:#FFFFFF;
 }
 
@@ -67,7 +67,7 @@ a:hover
 
 .boton{
         color:white;
-        background:#607D8B;
+        background:#0097A7;
         border:0px;
         width:100px;
         height:30px;
@@ -85,3 +85,17 @@ a:hover
     margin: 0 auto;
     font-size: 12px;
 }
+
+#bienvenido{
+  float:right;
+  margin-right: 10px;
+}
+
+#divHeaderLogin{
+  height: 100px;
+  background-color: #009688;
+  text-align: center;
+  padding-top: 45px;
+  color: #FFFFFF;
+}
+

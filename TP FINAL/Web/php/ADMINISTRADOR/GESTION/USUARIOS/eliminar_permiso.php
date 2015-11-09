@@ -1,6 +1,11 @@
 <html>
+<head>
+</head>
+<body>
 <?php include ("permisos_datos.php"); ?>
-	SELECCIONAR PERMISO A ELIMINAR
+	<div id="divContenedor">
+	</br>
+	<p>SELECCIONAR PERMISO A ELIMINAR</p>
 	
 	<?php
 		
@@ -11,3 +16,6 @@
 		
 		
 	?>
+	</div>
+</body>
+</html>

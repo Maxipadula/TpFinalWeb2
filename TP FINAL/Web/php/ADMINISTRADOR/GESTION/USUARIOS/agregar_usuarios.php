@@ -1,7 +1,7 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-		<title>LOGIN | S.G.L</title>
+		<title>Agregar User | S.G.L</title>
 		
 		<script type="text/javascript" src="../../../../js/funciones/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript" src="../../../../js/funciones/validarAgregarUsuarios.js"></script>
@@ -46,7 +46,7 @@
  					<div id="mensaje1" class="errores"> Ingresa solo letras</div>
  				</div>
  				</br>
-				
+ 								
  				<div><label>NOMBRE</label>
  					</br>
  					<input type="text" name="nombre" id="name" placeholder="Nombre">
