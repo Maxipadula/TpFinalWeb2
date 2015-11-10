@@ -22,12 +22,22 @@ create table if not exists licencia
 
   create table if not exists permiso
     (id_permiso int primary key,
+     descripcion varchar(30)
+
+);
+
+
+  create table if not exists dar_permiso
+    (id_permiso int ,
      codigo_rol int,
-     descripcion varchar(30),
      CONSTRAINT id_permiso_rol FOREIGN KEY (codigo_rol) REFERENCES rol (codigo_rol)
+	 ON DELETE CASCADE
+	 ON UPDATE CASCADE,
+	CONSTRAINT id_permiso_fk FOREIGN KEY (id_permiso) REFERENCES permiso (id_permiso)
 	 ON DELETE CASCADE
 	 ON UPDATE CASCADE
 );
+
 
  CREATE TABLE IF NOT EXISTS usuario (
     id_usuario INT PRIMARY KEY,

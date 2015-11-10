@@ -1,12 +1,13 @@
 use tpFinal;
 
 insert into rol (codigo_rol, descripcion)
-values	(1, 'chofer'),
+values	(1,'chofer'),
 		(2, 'administrador'),
 		(3, 'supervisor');
         
 /*select *
-from rol;*/
+from dar_permiso
+where descripcion = 'chofer ';*/
 
 insert into tipo_doc (id_tipo_doc, descripcion)
 values (1, 'DNI'), 
@@ -48,15 +49,42 @@ values ('A1', 'Motos de 2 ruedas hasta 50cc'),
        ('NO', 'NO tiene registro');
 
 /*select *
-from licencia;*/
+from dar_permiso;*/
 
-insert into permiso(id_permiso, codigo_rol, descripcion)
-	values(1,1,'chofer_home'),
-		  (4,1,'registrar_vc'),
-          (5,1,'chofer_registro'),
-		  (2,2,'administrador_home'),
-		  (3,3,'supervisor_home');
+insert into permiso(id_permiso, descripcion)
+	values(1,'chofer home'),
+		  (2,'registrar vale'),
+          (3,'registrar datos de viaje'),
+		  (4,'administrador home'),
+		  (5,'supervisor home'),
+          (6,'ABM de usuarios'),
+          (8,'ABM de mecanicos'),
+          (9,'ABM de transportes'),
+		  (10,'ABM de vehiculos'),
+		  (11,'ABM de viajes'),
+          (12,'ABM de reparaciones'),
+          (13,'gestion de permisos'),
+		  (7,'consulta de graficos');
+
+
           
+insert into dar_permiso(id_permiso,codigo_rol)
+	values(1,1),
+		  (2,1),
+		  (3,1),
+          (4,2),
+          (5,3),
+          (6,2),
+          (8,2),
+          (9,2),
+          (10,2),
+          (11,3),
+		  (12,3),
+		  (7,3),
+          (13,2),
+		  (7,2);
+          
+
 /*select * 
 from permiso;*/
           
@@ -75,8 +103,7 @@ values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 
 					FROM usuario U inner join
 								  tipo_doc TD on U.id_tipo_doc = TD.id_tipo_doc
 								  WHERE TD.id_tipo_doc = 1 AND  num_doc=302584789;   */
-/*select *
-from usuario;*/
+
 
 insert into modelo (id_modelo, descripcion)
 values	(100, 'HD 78'),
@@ -111,22 +138,7 @@ values  (123, 100, 1,5225.00),
         (789, 500, 2, 2500.00),
         (147, 600, 4,5000.00);
 
-/*SELECT U.id_vehiculo, IM.descripcion, MA.descripcion, U.capacidad_carga 
-									FROM vehiculo U inner join
-									modelo IM on U.id_modelo = IM.id_modelo inner join 
-									marca MA on U.id_marca = MA.id_marca;*/
-                                    
-/*	SELECT id_vehiculo ID
-										FROM vehiculo V join
-										     modelo MO on V.id_modelo = MO.id_modelo join
-											 marca MA on V.id_marca = MA.id_marca
-										WHERE MO.descripcion = 'HD 78' and MA.descripcion = 'Hyundai';
-*/
-/*select * 
-from vehiculo;*/
 
-/*insert into vehiculo (id_vehiculo, id_modelo, id_marca , capacidad_carga) 
- 									values (800,100,4,4521);*/
 
 insert into transporte (id_transporte, id_estado, id_vehiculo, num_chasis, num_motor, anio_fabricacion,patente)
 values	(1111, 'b', 123, 236589, 147852, 2005,'fkn 106'),
@@ -138,7 +150,11 @@ values	(1111, 'b', 123, 236589, 147852, 2005,'fkn 106'),
         (7777, 'mb',147, 134679, 976431, 2013,'oki 435'),
         (8888, 'r',789, 1357913, 791357, 2014,'dma 124');
         
-
+/*SELECT MA.descripcion marca,MO.descripcion modelo, T.patente
+											  FROM transporte T join
+												   vehiculo V  on T.id_vehiculo = V.id_vehiculo join
+												   modelo MO on V.id_modelo = MO.id_modelo join
+												   marca MA on MA.id_marca = MA.id_marca*/
  
 /*SELECT T.id_transporte, E.descripcion Estado, M.descripcion Marca, MO.descripcion Modelo, num_chasis NroChasis, num_motor, año_fabricacion, patente
 										  FROM transporte T inner join 
@@ -170,8 +186,8 @@ values	(1122, 10, 2222, 'Buenos Aires', 10000, 'Florianopolis', 'Pedromania', '2
 		(5566, 30, 3333, 'Misiones', 4000, 'Montevideo','sisis', '2015-12-12 12:30:34', '2015-12-12 16:30:00','medias'),
 		(6677, 50, 4444, 'Mendoza',  8500, 'Asuncion','nadanada', '2015-07-06 12:00:20', '2015-07-06 20:40:29','buzos');
 
-/*select *
-from viaje;*/
+select *
+from viaje;
 
 insert into vale_combustible(id_vc,id_viaje,  fecha_hora, lugar, costo, cantidad)
 values (1,1122,'2015-06-05 15:11:25', 'Entre Rios', 5000.00, 250.00),   
@@ -226,8 +242,8 @@ values	(001, 'Yanet Rodriguez'),
 		(005, 'Ivan Lomba'),
 		(006, 'Lucrecio Lunch');
         
-/*select * 
-from mecanico;*/     
+select * 
+from mecanico;     
         
 insert into reparacion (codigo_reparacion, id_mecanico, id_transporte,id_orden, costo, fecha)
 values	(123, 006, 5555,1, 15000, '2015-08-06'),
@@ -239,12 +255,8 @@ values	(123, 006, 5555,1, 15000, '2015-08-06'),
 		(129, 004, 2222,7, 8750,'2015-03-06'),
         (130, 004, 2222,8,7450,'2015-03-06'),
 		(131, 003, 6666,9, 2500,'2015-06-26');
+
         
 /*select * 
 from reparacion;*/        
         
-/*SELECT * 
-						FROM usuario u join 
-							     rol r on u.codigo_rol = r.codigo_rol join
-								 permiso p on r.codigo_rol = p.codigo_rol
-	                        WHERE  id_usuario= 30 and p.descripcion = 'chofer_home'*/
