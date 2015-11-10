@@ -1,4 +1,7 @@
  <html>
+<head>
+</head>	
+<body>
 	<?php include("vehiculos_datos.php"); ?>
 	<?PHP
 			session_start();
@@ -20,41 +23,43 @@
 			
 			$id_vehiculo +=1;
 	?>
- 	FORMULARIO PARA TABLA VEHICULO:
+	<div id="divContenedor">
+	</br>
+ 	<p>FORMULARIO PARA TABLA VEHICULO:</p>
  	<form class='contacto' method="post" action="<?php echo  $validar_datos_vehiculos  ?>">
  		<div id="contacto">
- 				</br>
- 				<div><label>ID
+ 				
+ 				<div><label>ID</label>
  					</br>
 					<input type="text" name="id_ve"  value="<?php echo $id_vehiculo?>"readonly = "readonly">
- 					</label>
  				</div>
  				</br>
 				
- 				<div><label>MODELO
+ 				<div><label>MODELO</label>
  				</br>
 				<input type="text" name="modelo">
  				</div>
 				<br>
 				
-				<div><label>MARCA
+				<div><label>MARCA</label>
  				</br>
 				<input type="text" name="marca">
  				</div>
 				<br>
 				
-				<div><label>CAPACIDAD DE CARGA
+				<div><label>CAPACIDAD DE CARGA</label>
 					</br>
  					<input type="text" name="capacidad_carga">
- 					</label>
  				</div>
 				<br>
 				
- 				<input type="submit" value="Agregar">
+ 				<input type="submit" value="Agregar" id="boton" class="boton">
+ 				<input type="submit" value="Atras" onclick = "location='<?php echo $vehiculos_datos ?>'" class="boton"/>
 				<br>
  		</div>
  	</form>
  	
-	<input type="submit" value="Atras" onclick = "location='<?php echo $vehiculos_datos ?>'"/>
- 
+	
+ 	</div>
+ </body>
  </html>

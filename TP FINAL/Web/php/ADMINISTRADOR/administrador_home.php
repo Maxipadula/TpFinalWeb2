@@ -32,9 +32,9 @@
 		</div>
 	<nav id='divNav' >
 		<ul>
-		 	<li><a href="./<?php echo $graficos ?>/<?php echo $graficos_datos?>"> CONSULTAR GRAFICOS &nbsp;&nbsp;</a></li>
-       		<li> <a href="./<?php echo $registrar_datos ?>"> GESTIONAR RECURSOS &nbsp;&nbsp;</a></li>
-            <li><a href="../<?php echo $login ?>"> SALIR &nbsp;&nbsp;</a></li>
+		 	<li><a href="./<?php echo $graficos ?>/<?php echo $graficos_datos?>">CONSULTAR GRAFICOS</a></li>
+       		<li> <a href="./<?php echo $registrar_datos ?>">GESTIONAR RECURSOS</a></li>
+            <li><a href="../<?php echo $login ?>">SALIR</a></li>
 		</ul>
  
 	</nav>
