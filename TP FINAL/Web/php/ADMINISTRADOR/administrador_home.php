@@ -30,16 +30,11 @@
 			<h1> Sistema de Gestión Logistica</h1>
 		</div>
 	<nav id='divNav' >
-		
-       <ul>
-           		
-
+		<ul>
 		 	<li><a href="./<?php echo $graficos ?>/<?php echo $graficos_datos?>"> CONSULTAR GRAFICOS &nbsp;&nbsp;</a></li>
-       			   <li> <a href="./<?php echo $registrar_datos ?>"> GESTIONAR RECURSOS &nbsp;&nbsp;</a></li>
-            		<li><a href="../<?php echo $login ?>"> SALIR &nbsp;&nbsp;</a></li>
-		   <br>
-
-       </ul>
+       		<li> <a href="./<?php echo $registrar_datos ?>"> GESTIONAR RECURSOS &nbsp;&nbsp;</a></li>
+            <li><a href="../<?php echo $login ?>"> SALIR &nbsp;&nbsp;</a></li>
+		</ul>
  
 	</nav>
 	<div id="divContenedor">
