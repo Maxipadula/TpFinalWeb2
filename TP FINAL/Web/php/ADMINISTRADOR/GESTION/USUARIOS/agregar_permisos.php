@@ -1,6 +1,13 @@
- <html>
-<meta charset="UTF-8">
+<html>
 <?php include ("permisos_datos.php"); ?>
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../../../js/funciones/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../../js/funciones/validarModificarUser1.js"></script>
+</head>
+<body>
+<div id="divContenedor">
+
 	<?PHP
 		session_start();
 		
@@ -21,21 +28,23 @@
 	?>
 	<form class='contacto' method="post" action="<?php echo  $validar_agregar_permiso ?>">
  		<div id="contacto">
-	<div><label>ID DEL PERMISO:
+ 		</br>
+ 				<div><label>ID DEL PERMISO:</label>
 					</br>
 					<input type="text" name="id_permiso"  value="<?php echo $id_permiso?>"readonly = "readonly">
- 				</label>
  				</div>	
  				</br>
 				
-	<div><label>NOMBRE DEL PERMISO QUE DESEA AGREGAR:
-			</br>
- 					<input type="text" name="permiso">
- 				</label>
+				<div><label>NOMBRE DEL PERMISO QUE DESEA AGREGAR:</label>
+				</br>
+ 				<input type="text" name="permiso" id="permiso">
+ 				<div id="mensaje1" class="errores"> Ingresa solo letras</div>
  				</div>
  				</br>
 		
- 				<input type="submit" value="Agregar">
-				<input type='button' onclick='history.back()' name='volver atrás' value='Volver'>
+ 				<input type="submit" value="Agregar" class="boton" id="boton" />
+				<input type='button' onclick='history.back()' name='volver atrás' value='Volver' class="boton"/>
  	</form>
+</div>
+</body>
 </html>

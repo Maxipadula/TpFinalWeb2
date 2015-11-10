@@ -9,10 +9,14 @@
 	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			
 	?>
+<head>
+</head>
+<body>
+	<div id="divContenedor">
 	<form class='contacto' method="post" action="<?php echo  $validar_asignar_permiso ?>">
  		<div id="contacto">
-	
-			<div><label>SELECCIONE ROL
+			</br>
+			<div><label>SELECCIONE ROL</label>
 					</br>
 					 <select name="rol">    
 				  	<option value='nada' selected='selected'></option>
@@ -33,10 +37,9 @@
 				}
 				?>
 				</select>
- 					</label>
  				</div>	
-				
-			<div><label>SELECCIONE PERMISO
+				</br>
+			<div><label>SELECCIONE PERMISO</label>
 					</br>
 					 <select name="permiso">    
 				  	<option value='nada' selected='selected'></option>
@@ -57,11 +60,12 @@
 				}
 				?>
 				</select>
- 					</label>
  				</div>
 				
-		
- 				<input type="submit" value="Asignar">
-				<input type='button' onclick='history.back()' name='volver atrás' value='Volver'>
- 	</form>	
+				</br>
+ 				<input type="submit" value="Asignar" id="boton" class="boton"/>
+				<input type='button' onclick='history.back()' name='volver atrás' value='Volver' class="boton" />
+ 	</form>
+ 	</div>
+</body>
 </html>	
