@@ -59,7 +59,12 @@
  		</div>
  	</form>
  	
+<<<<<<< HEAD
 	
  	</div>
  </body>
+=======
+
+ 
+>>>>>>> origin/master
  </html>
