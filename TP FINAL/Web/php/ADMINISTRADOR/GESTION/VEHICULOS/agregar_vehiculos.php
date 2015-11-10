@@ -55,6 +55,6 @@
  		</div>
  	</form>
  	
-	<input type="submit" value="Atras" onclick = "location='<?php echo $vehiculos_datos ?>'"/>
+
  
  </html>

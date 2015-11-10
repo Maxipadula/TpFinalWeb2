@@ -23,7 +23,7 @@
 		   <br> --->
 		  <li> <a href="./<?php echo $eliminar_vehiculos ?>">ELIMINAR</a></li>
 		  
-		  <li><a href="./<?php echo $registrar_datos?>">SALIR</a></li>
+		  <li><a href="../../<?php echo $registrar_datos?>">SALIR</a></li>
 
 
 		
